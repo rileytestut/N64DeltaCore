@@ -1,0 +1,3 @@
+[submodule "Mupen64Plus/mupen64plus-core"]
+	path = Mupen64Plus/mupen64plus-core
+	url = https://github.com/mupen64plus/mupen64plus-core.git
