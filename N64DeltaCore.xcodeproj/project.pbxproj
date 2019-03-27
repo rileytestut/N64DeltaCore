@@ -413,6 +413,10 @@
 		BF2EFCF8224C317D0032AD78 /* pngset.c in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCE2224C317D0032AD78 /* pngset.c */; };
 		BF2EFCF9224C31B70032AD78 /* png.c in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCDF224C317D0032AD78 /* png.c */; };
 		BF2EFCFE224C32EA0032AD78 /* TextDrawerStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF9C8224C1C080032AD78 /* TextDrawerStub.cpp */; };
+		BF2EFD00224C33830032AD78 /* N64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCFF224C33830032AD78 /* N64.swift */; };
+		BF2EFD02224C339E0032AD78 /* N64DeltaCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFD01224C339D0032AD78 /* N64DeltaCore.m */; };
+		BF2EFD0C224C39AD0032AD78 /* N64EmulatorBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EFD04224C370C0032AD78 /* N64EmulatorBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF2EFD0D224C39B10032AD78 /* N64EmulatorBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFD05224C370C0032AD78 /* N64EmulatorBridge.m */; };
 		BF799019224BF59E009B094F /* N64DeltaCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799017224BF59E009B094F /* N64DeltaCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF7994A6224BFDCF009B094F /* libMupen64Plus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF79949A224BFDAA009B094F /* libMupen64Plus.a */; };
 		BF7995F3224BFF6C009B094F /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = BF7994E1224BFF6C009B094F /* md5.c */; };
@@ -1053,6 +1057,10 @@
 		BF2EFCE0224C317D0032AD78 /* pngrtran.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pngrtran.c; sourceTree = "<group>"; };
 		BF2EFCE1224C317D0032AD78 /* pngrutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pngrutil.c; sourceTree = "<group>"; };
 		BF2EFCE2224C317D0032AD78 /* pngset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pngset.c; sourceTree = "<group>"; };
+		BF2EFCFF224C33830032AD78 /* N64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N64.swift; sourceTree = "<group>"; };
+		BF2EFD01224C339D0032AD78 /* N64DeltaCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = N64DeltaCore.m; sourceTree = "<group>"; };
+		BF2EFD04224C370C0032AD78 /* N64EmulatorBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64EmulatorBridge.h; sourceTree = "<group>"; };
+		BF2EFD05224C370C0032AD78 /* N64EmulatorBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = N64EmulatorBridge.m; sourceTree = "<group>"; };
 		BF799014224BF59E009B094F /* N64DeltaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = N64DeltaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF799017224BF59E009B094F /* N64DeltaCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64DeltaCore.h; sourceTree = "<group>"; };
 		BF799018224BF59E009B094F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2335,6 +2343,15 @@
 			path = Mupen64Plus/libpng;
 			sourceTree = SOURCE_ROOT;
 		};
+		BF2EFD03224C36F00032AD78 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				BF2EFD04224C370C0032AD78 /* N64EmulatorBridge.h */,
+				BF2EFD05224C370C0032AD78 /* N64EmulatorBridge.m */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
 		BF79900A224BF59E009B094F = {
 			isa = PBXGroup;
 			children = (
@@ -2362,6 +2379,9 @@
 			isa = PBXGroup;
 			children = (
 				BF799017224BF59E009B094F /* N64DeltaCore.h */,
+				BF2EFD01224C339D0032AD78 /* N64DeltaCore.m */,
+				BF2EFCFF224C33830032AD78 /* N64.swift */,
+				BF2EFD03224C36F00032AD78 /* Bridge */,
 				BF799018224BF59E009B094F /* Info.plist */,
 			);
 			path = N64DeltaCore;
@@ -3443,6 +3463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF799019224BF59E009B094F /* N64DeltaCore.h in Headers */,
+				BF2EFD0C224C39AD0032AD78 /* N64EmulatorBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3560,6 +3581,7 @@
 					};
 					BF799013224BF59E009B094F = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 					BF799499224BFDAA009B094F = {
 						CreatedOnToolsVersion = 10.2;
@@ -3784,6 +3806,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2EFD02224C339E0032AD78 /* N64DeltaCore.m in Sources */,
+				BF2EFD00224C33830032AD78 /* N64.swift in Sources */,
+				BF2EFD0D224C39B10032AD78 /* N64EmulatorBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3901,6 +3926,7 @@
 		BF2EF812224C1BF60032AD78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -3953,6 +3979,7 @@
 		BF2EF813224C1BF60032AD78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -4001,7 +4028,7 @@
 		BF79901A224BF59E009B094F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -4074,7 +4101,7 @@
 		BF79901B224BF59E009B094F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -4141,6 +4168,7 @@
 		BF79901D224BF59E009B094F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -4164,6 +4192,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.N64DeltaCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
@@ -4176,6 +4205,7 @@
 		BF79901E224BF59E009B094F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
