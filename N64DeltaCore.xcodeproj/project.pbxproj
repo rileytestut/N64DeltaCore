@@ -76,6 +76,33 @@
 		BF79965C224BFF6C009B094F /* lirc.c in Sources */ = {isa = PBXBuildFile; fileRef = BF7995EB224BFF6C009B094F /* lirc.c */; };
 		BF79965D224BFF6C009B094F /* sdl_key_converter.c in Sources */ = {isa = PBXBuildFile; fileRef = BF7995EC224BFF6C009B094F /* sdl_key_converter.c */; };
 		BF799668224C0598009B094F /* SDLStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = BF799664224C0598009B094F /* SDLStubs.m */; };
+		BF799678224C09A1009B094F /* N64DeltaCore_RSP.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799676224C09A1009B094F /* N64DeltaCore_RSP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF7996A5224C09F3009B094F /* pack.h in Headers */ = {isa = PBXBuildFile; fileRef = BF79967E224C09F2009B094F /* pack.h */; };
+		BF7996A6224C09F3009B094F /* divide.h in Headers */ = {isa = PBXBuildFile; fileRef = BF79967F224C09F2009B094F /* divide.h */; };
+		BF7996A7224C09F3009B094F /* multiply.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799680224C09F2009B094F /* multiply.h */; };
+		BF7996A8224C09F3009B094F /* add.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799681224C09F2009B094F /* add.h */; };
+		BF7996A9224C09F3009B094F /* logical.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799682224C09F2009B094F /* logical.c */; };
+		BF7996AA224C09F3009B094F /* vu.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799683224C09F2009B094F /* vu.c */; };
+		BF7996AB224C09F3009B094F /* select.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799684224C09F2009B094F /* select.c */; };
+		BF7996AC224C09F3009B094F /* divide.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799685224C09F2009B094F /* divide.c */; };
+		BF7996AD224C09F3009B094F /* logical.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799686224C09F2009B094F /* logical.h */; };
+		BF7996AE224C09F3009B094F /* add.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799687224C09F2009B094F /* add.c */; };
+		BF7996AF224C09F3009B094F /* multiply.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799688224C09F2009B094F /* multiply.c */; };
+		BF7996B0224C09F3009B094F /* select.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799689224C09F2009B094F /* select.h */; };
+		BF7996B1224C09F3009B094F /* vu.h in Headers */ = {isa = PBXBuildFile; fileRef = BF79968A224C09F2009B094F /* vu.h */; };
+		BF7996B2224C09F3009B094F /* my_types.h in Headers */ = {isa = PBXBuildFile; fileRef = BF79968B224C09F2009B094F /* my_types.h */; };
+		BF7996B5224C09F3009B094F /* su.c in Sources */ = {isa = PBXBuildFile; fileRef = BF79968E224C09F2009B094F /* su.c */; };
+		BF7996B6224C09F3009B094F /* module.c in Sources */ = {isa = PBXBuildFile; fileRef = BF79968F224C09F2009B094F /* module.c */; };
+		BF7996B8224C09F3009B094F /* mupen64plus-rsp-cxd4.vcxproj.filters in Resources */ = {isa = PBXBuildFile; fileRef = BF799694224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj.filters */; };
+		BF7996B9224C09F3009B094F /* mupen64plus-rsp-cxd4.vcxproj in Resources */ = {isa = PBXBuildFile; fileRef = BF799695224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj */; };
+		BF7996BB224C09F3009B094F /* osal_dynamiclib.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799697224C09F2009B094F /* osal_dynamiclib.h */; };
+		BF7996BC224C09F3009B094F /* osal_dynamiclib_unix.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799698224C09F2009B094F /* osal_dynamiclib_unix.c */; };
+		BF7996BD224C09F3009B094F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BF799699224C09F2009B094F /* README.md */; };
+		BF7996BE224C09F3009B094F /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = BF79969A224C09F2009B094F /* COPYING */; };
+		BF7996C1224C09F3009B094F /* rsp.h in Headers */ = {isa = PBXBuildFile; fileRef = BF79969D224C09F2009B094F /* rsp.h */; };
+		BF7996C4224C09F3009B094F /* module.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7996A0224C09F2009B094F /* module.h */; };
+		BF7996C5224C09F3009B094F /* SSE2NEON.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7996A2224C09F2009B094F /* SSE2NEON.h */; };
+		BF7996C6224C09F3009B094F /* su.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7996A3224C09F2009B094F /* su.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +112,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = BF799499224BFDAA009B094F;
 			remoteInfo = libMupen64Plus;
+		};
+		BF7996C8224C0A43009B094F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF79900B224BF59E009B094F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF799673224C09A1009B094F;
+			remoteInfo = "N64DeltaCore-RSP";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -387,6 +421,37 @@
 		BF799665224C0598009B094F /* SDL_thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL_thread.h; sourceTree = "<group>"; };
 		BF799666224C0598009B094F /* SDL_opengl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL_opengl.h; sourceTree = "<group>"; };
 		BF799667224C0598009B094F /* SDL_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL_config.h; sourceTree = "<group>"; };
+		BF799674224C09A1009B094F /* N64DeltaCore_RSP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = N64DeltaCore_RSP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF799676224C09A1009B094F /* N64DeltaCore_RSP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64DeltaCore_RSP.h; sourceTree = "<group>"; };
+		BF799677224C09A1009B094F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF79967E224C09F2009B094F /* pack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pack.h; sourceTree = "<group>"; };
+		BF79967F224C09F2009B094F /* divide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = divide.h; sourceTree = "<group>"; };
+		BF799680224C09F2009B094F /* multiply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = multiply.h; sourceTree = "<group>"; };
+		BF799681224C09F2009B094F /* add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = add.h; sourceTree = "<group>"; };
+		BF799682224C09F2009B094F /* logical.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = logical.c; sourceTree = "<group>"; };
+		BF799683224C09F2009B094F /* vu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vu.c; sourceTree = "<group>"; };
+		BF799684224C09F2009B094F /* select.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = select.c; sourceTree = "<group>"; };
+		BF799685224C09F2009B094F /* divide.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = divide.c; sourceTree = "<group>"; };
+		BF799686224C09F2009B094F /* logical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logical.h; sourceTree = "<group>"; };
+		BF799687224C09F2009B094F /* add.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = add.c; sourceTree = "<group>"; };
+		BF799688224C09F2009B094F /* multiply.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = multiply.c; sourceTree = "<group>"; };
+		BF799689224C09F2009B094F /* select.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = select.h; sourceTree = "<group>"; };
+		BF79968A224C09F2009B094F /* vu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vu.h; sourceTree = "<group>"; };
+		BF79968B224C09F2009B094F /* my_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = my_types.h; sourceTree = "<group>"; };
+		BF79968E224C09F2009B094F /* su.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = su.c; sourceTree = "<group>"; };
+		BF79968F224C09F2009B094F /* module.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = module.c; sourceTree = "<group>"; };
+		BF799692224C09F2009B094F /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		BF799694224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj.filters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "mupen64plus-rsp-cxd4.vcxproj.filters"; sourceTree = "<group>"; };
+		BF799695224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "mupen64plus-rsp-cxd4.vcxproj"; sourceTree = "<group>"; };
+		BF799696224C09F2009B094F /* lto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lto.c; sourceTree = "<group>"; };
+		BF799697224C09F2009B094F /* osal_dynamiclib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = osal_dynamiclib.h; sourceTree = "<group>"; };
+		BF799698224C09F2009B094F /* osal_dynamiclib_unix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = osal_dynamiclib_unix.c; sourceTree = "<group>"; };
+		BF799699224C09F2009B094F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BF79969A224C09F2009B094F /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		BF79969D224C09F2009B094F /* rsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rsp.h; sourceTree = "<group>"; };
+		BF7996A0224C09F2009B094F /* module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module.h; sourceTree = "<group>"; };
+		BF7996A2224C09F2009B094F /* SSE2NEON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSE2NEON.h; sourceTree = "<group>"; };
+		BF7996A3224C09F2009B094F /* su.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = su.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +470,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BF799671224C09A1009B094F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -413,6 +485,7 @@
 			children = (
 				BF799016224BF59E009B094F /* N64DeltaCore */,
 				BF79949B224BFDAA009B094F /* libMupen64Plus */,
+				BF799675224C09A1009B094F /* N64DeltaCore-RSP */,
 				BF799015224BF59E009B094F /* Products */,
 				BF7994A5224BFDCF009B094F /* Frameworks */,
 			);
@@ -423,6 +496,7 @@
 			children = (
 				BF799014224BF59E009B094F /* N64DeltaCore.framework */,
 				BF79949A224BFDAA009B094F /* libMupen64Plus.a */,
+				BF799674224C09A1009B094F /* N64DeltaCore_RSP.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -455,22 +529,22 @@
 		BF7994A7224BFF6B009B094F /* mupen64plus-core */ = {
 			isa = PBXGroup;
 			children = (
-				BF7994A8224BFF6B009B094F /* tools */,
+				BF7994CA224BFF6B009B094F /* .gitattributes */,
+				BF7994C9224BFF6B009B094F /* .gitignore */,
+				BF7994F5224BFF6C009B094F /* CREDITS */,
 				BF7994BD224BFF6B009B094F /* INSTALL */,
 				BF7994BE224BFF6B009B094F /* LICENSES */,
-				BF7994BF224BFF6B009B094F /* projects */,
-				BF7994C5224BFF6B009B094F /* RELEASE */,
 				BF7994C6224BFF6B009B094F /* README */,
+				BF7994C5224BFF6B009B094F /* RELEASE */,
 				BF7994C7224BFF6B009B094F /* README.md */,
-				BF7994C8224BFF6B009B094F /* appveyor.yml */,
-				BF7994C9224BFF6B009B094F /* .gitignore */,
-				BF7994CA224BFF6B009B094F /* .gitattributes */,
-				BF7994CB224BFF6B009B094F /* doc */,
-				BF7994DE224BFF6C009B094F /* subprojects */,
-				BF7994F0224BFF6C009B094F /* data */,
 				BF7994F4224BFF6C009B094F /* .travis.yml */,
-				BF7994F5224BFF6C009B094F /* CREDITS */,
+				BF7994C8224BFF6B009B094F /* appveyor.yml */,
+				BF7994F0224BFF6C009B094F /* data */,
+				BF7994CB224BFF6B009B094F /* doc */,
+				BF7994BF224BFF6B009B094F /* projects */,
 				BF7994F6224BFF6C009B094F /* src */,
+				BF7994DE224BFF6C009B094F /* subprojects */,
+				BF7994A8224BFF6B009B094F /* tools */,
 			);
 			name = "mupen64plus-core";
 			path = "Mupen64Plus/mupen64plus-core";
@@ -1149,6 +1223,92 @@
 			path = SDL;
 			sourceTree = "<group>";
 		};
+		BF799675224C09A1009B094F /* N64DeltaCore-RSP */ = {
+			isa = PBXGroup;
+			children = (
+				BF799676224C09A1009B094F /* N64DeltaCore_RSP.h */,
+				BF799677224C09A1009B094F /* Info.plist */,
+				BF79967C224C09F2009B094F /* mupen64plus-rsp-cxd4 */,
+			);
+			path = "N64DeltaCore-RSP";
+			sourceTree = "<group>";
+		};
+		BF79967C224C09F2009B094F /* mupen64plus-rsp-cxd4 */ = {
+			isa = PBXGroup;
+			children = (
+				BF79969A224C09F2009B094F /* COPYING */,
+				BF799696224C09F2009B094F /* lto.c */,
+				BF79968F224C09F2009B094F /* module.c */,
+				BF799698224C09F2009B094F /* osal_dynamiclib_unix.c */,
+				BF79968E224C09F2009B094F /* su.c */,
+				BF7996A0224C09F2009B094F /* module.h */,
+				BF79968B224C09F2009B094F /* my_types.h */,
+				BF799697224C09F2009B094F /* osal_dynamiclib.h */,
+				BF79969D224C09F2009B094F /* rsp.h */,
+				BF7996A3224C09F2009B094F /* su.h */,
+				BF799699224C09F2009B094F /* README.md */,
+				BF799690224C09F2009B094F /* projects */,
+				BF7996A1224C09F2009B094F /* sse2neon */,
+				BF79967D224C09F2009B094F /* vu */,
+			);
+			name = "mupen64plus-rsp-cxd4";
+			path = "Mupen64Plus/mupen64plus-rsp-cxd4";
+			sourceTree = SOURCE_ROOT;
+		};
+		BF79967D224C09F2009B094F /* vu */ = {
+			isa = PBXGroup;
+			children = (
+				BF79967E224C09F2009B094F /* pack.h */,
+				BF79967F224C09F2009B094F /* divide.h */,
+				BF799680224C09F2009B094F /* multiply.h */,
+				BF799681224C09F2009B094F /* add.h */,
+				BF799682224C09F2009B094F /* logical.c */,
+				BF799683224C09F2009B094F /* vu.c */,
+				BF799684224C09F2009B094F /* select.c */,
+				BF799685224C09F2009B094F /* divide.c */,
+				BF799686224C09F2009B094F /* logical.h */,
+				BF799687224C09F2009B094F /* add.c */,
+				BF799688224C09F2009B094F /* multiply.c */,
+				BF799689224C09F2009B094F /* select.h */,
+				BF79968A224C09F2009B094F /* vu.h */,
+			);
+			path = vu;
+			sourceTree = "<group>";
+		};
+		BF799690224C09F2009B094F /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				BF799691224C09F2009B094F /* unix */,
+				BF799693224C09F2009B094F /* VisualStudio2013 */,
+			);
+			path = projects;
+			sourceTree = "<group>";
+		};
+		BF799691224C09F2009B094F /* unix */ = {
+			isa = PBXGroup;
+			children = (
+				BF799692224C09F2009B094F /* Makefile */,
+			);
+			path = unix;
+			sourceTree = "<group>";
+		};
+		BF799693224C09F2009B094F /* VisualStudio2013 */ = {
+			isa = PBXGroup;
+			children = (
+				BF799694224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj.filters */,
+				BF799695224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj */,
+			);
+			path = VisualStudio2013;
+			sourceTree = "<group>";
+		};
+		BF7996A1224C09F2009B094F /* sse2neon */ = {
+			isa = PBXGroup;
+			children = (
+				BF7996A2224C09F2009B094F /* SSE2NEON.h */,
+			);
+			path = sse2neon;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1157,6 +1317,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF799019224BF59E009B094F /* N64DeltaCore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF79966F224C09A1009B094F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7996C6224C09F3009B094F /* su.h in Headers */,
+				BF7996C1224C09F3009B094F /* rsp.h in Headers */,
+				BF7996B0224C09F3009B094F /* select.h in Headers */,
+				BF7996A7224C09F3009B094F /* multiply.h in Headers */,
+				BF799678224C09A1009B094F /* N64DeltaCore_RSP.h in Headers */,
+				BF7996C4224C09F3009B094F /* module.h in Headers */,
+				BF7996A5224C09F3009B094F /* pack.h in Headers */,
+				BF7996A6224C09F3009B094F /* divide.h in Headers */,
+				BF7996B1224C09F3009B094F /* vu.h in Headers */,
+				BF7996B2224C09F3009B094F /* my_types.h in Headers */,
+				BF7996BB224C09F3009B094F /* osal_dynamiclib.h in Headers */,
+				BF7996C5224C09F3009B094F /* SSE2NEON.h in Headers */,
+				BF7996AD224C09F3009B094F /* logical.h in Headers */,
+				BF7996A8224C09F3009B094F /* add.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1175,6 +1356,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BF7996C9224C0A43009B094F /* PBXTargetDependency */,
 				BF7994A4224BFDB1009B094F /* PBXTargetDependency */,
 			);
 			name = N64DeltaCore;
@@ -1199,6 +1381,24 @@
 			productReference = BF79949A224BFDAA009B094F /* libMupen64Plus.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		BF799673224C09A1009B094F /* N64DeltaCore-RSP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF79967B224C09A1009B094F /* Build configuration list for PBXNativeTarget "N64DeltaCore-RSP" */;
+			buildPhases = (
+				BF79966F224C09A1009B094F /* Headers */,
+				BF799670224C09A1009B094F /* Sources */,
+				BF799671224C09A1009B094F /* Frameworks */,
+				BF799672224C09A1009B094F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "N64DeltaCore-RSP";
+			productName = "N64DeltaCore-RSP";
+			productReference = BF799674224C09A1009B094F /* N64DeltaCore_RSP.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1213,6 +1413,9 @@
 						CreatedOnToolsVersion = 10.2;
 					};
 					BF799499224BFDAA009B094F = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					BF799673224C09A1009B094F = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
@@ -1231,6 +1434,7 @@
 			targets = (
 				BF799013224BF59E009B094F /* N64DeltaCore */,
 				BF799499224BFDAA009B094F /* libMupen64Plus */,
+				BF799673224C09A1009B094F /* N64DeltaCore-RSP */,
 			);
 		};
 /* End PBXProject section */
@@ -1240,6 +1444,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF799672224C09A1009B094F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7996BE224C09F3009B094F /* COPYING in Resources */,
+				BF7996BD224C09F3009B094F /* README.md in Resources */,
+				BF7996B8224C09F3009B094F /* mupen64plus-rsp-cxd4.vcxproj.filters in Resources */,
+				BF7996B9224C09F3009B094F /* mupen64plus-rsp-cxd4.vcxproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1327,6 +1542,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BF799670224C09A1009B094F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7996AB224C09F3009B094F /* select.c in Sources */,
+				BF7996AF224C09F3009B094F /* multiply.c in Sources */,
+				BF7996BC224C09F3009B094F /* osal_dynamiclib_unix.c in Sources */,
+				BF7996AA224C09F3009B094F /* vu.c in Sources */,
+				BF7996AC224C09F3009B094F /* divide.c in Sources */,
+				BF7996A9224C09F3009B094F /* logical.c in Sources */,
+				BF7996AE224C09F3009B094F /* add.c in Sources */,
+				BF7996B5224C09F3009B094F /* su.c in Sources */,
+				BF7996B6224C09F3009B094F /* module.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1334,6 +1565,11 @@
 			isa = PBXTargetDependency;
 			target = BF799499224BFDAA009B094F /* libMupen64Plus */;
 			targetProxy = BF7994A3224BFDB1009B094F /* PBXContainerItemProxy */;
+		};
+		BF7996C9224C0A43009B094F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF799673224C09A1009B094F /* N64DeltaCore-RSP */;
+			targetProxy = BF7996C8224C0A43009B094F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1394,15 +1630,28 @@
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
 					"\"$(SRCROOT)/libMupen64Plus/SDL\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
+					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-fno-strict-aliasing",
+					"-fvisibility=hidden",
+					"-DGCC",
+					"-pthread",
+					"-fPIC",
+					"-D__unix__",
+					"-ffast-math",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
+					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
+				);
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1458,14 +1707,27 @@
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
 					"\"$(SRCROOT)/libMupen64Plus/SDL\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
+					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = (
+					"-fno-strict-aliasing",
+					"-fvisibility=hidden",
+					"-DGCC",
+					"-pthread",
+					"-fPIC",
+					"-D__unix__",
+					"-ffast-math",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
+					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
+				);
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1538,9 +1800,6 @@
 					"-DNDEBUG=1",
 					"-DPIC=1",
 					"-flto",
-					"-fvisibility=hidden",
-					"-ffast-math",
-					"-fno-strict-aliasing",
 					"-fomit-frame-pointer",
 					"-DUSE_GLES=1",
 				);
@@ -1567,14 +1826,69 @@
 					"-DNDEBUG=1",
 					"-DPIC=1",
 					"-flto",
-					"-fvisibility=hidden",
-					"-ffast-math",
-					"-fno-strict-aliasing",
 					"-fomit-frame-pointer",
 					"-DUSE_GLES=1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Mupen64Plus;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BF799679224C09A1009B094F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "N64DeltaCore-RSP/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DM64P_PLUGIN_API",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rileytestut.N64DeltaCore-RSP";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF79967A224C09A1009B094F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "N64DeltaCore-RSP/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DM64P_PLUGIN_API",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rileytestut.N64DeltaCore-RSP";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1606,6 +1920,15 @@
 			buildConfigurations = (
 				BF7994A0224BFDAA009B094F /* Debug */,
 				BF7994A1224BFDAA009B094F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF79967B224C09A1009B094F /* Build configuration list for PBXNativeTarget "N64DeltaCore-RSP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF799679224C09A1009B094F /* Debug */,
+				BF79967A224C09A1009B094F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
