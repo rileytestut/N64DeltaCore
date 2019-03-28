@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0D528C224D63DB0096DF50 /* INSTALL in Resources */ = {isa = PBXBuildFile; fileRef = BF0D5266224D63DB0096DF50 /* INSTALL */; };
+		BF0D528D224D63DB0096DF50 /* LICENSES in Resources */ = {isa = PBXBuildFile; fileRef = BF0D5267224D63DB0096DF50 /* LICENSES */; };
+		BF0D528F224D63DC0096DF50 /* mupen64plus-rsp-hle.vcxproj in Resources */ = {isa = PBXBuildFile; fileRef = BF0D526C224D63DB0096DF50 /* mupen64plus-rsp-hle.vcxproj */; };
+		BF0D5290224D63DC0096DF50 /* RELEASE in Resources */ = {isa = PBXBuildFile; fileRef = BF0D526D224D63DB0096DF50 /* RELEASE */; };
+		BF0D5291224D63DC0096DF50 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BF0D526E224D63DB0096DF50 /* .gitignore */; };
+		BF0D5292224D63DC0096DF50 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = BF0D526F224D63DB0096DF50 /* .gitattributes */; };
+		BF0D5293224D63DC0096DF50 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = BF0D5270224D63DB0096DF50 /* .travis.yml */; };
+		BF0D5297224D63DC0096DF50 /* alist.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0D5275224D63DB0096DF50 /* alist.h */; };
+		BF0D5298224D63DC0096DF50 /* arithmetics.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0D5276224D63DB0096DF50 /* arithmetics.h */; };
+		BF0D5299224D63DC0096DF50 /* hle_external.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0D5277224D63DB0096DF50 /* hle_external.h */; };
+		BF0D529B224D63DC0096DF50 /* osal_dynamiclib.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0D5279224D63DB0096DF50 /* osal_dynamiclib.h */; };
+		BF0D529D224D63DC0096DF50 /* hle_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0D527B224D63DB0096DF50 /* hle_internal.h */; };
+		BF0D529F224D63DC0096DF50 /* audio.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0D527D224D63DB0096DF50 /* audio.h */; };
+		BF0D52A3224D63DC0096DF50 /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0D5281224D63DB0096DF50 /* common.h */; };
+		BF0D52A4224D63DC0096DF50 /* rsp_api_export.ver in Resources */ = {isa = PBXBuildFile; fileRef = BF0D5282224D63DB0096DF50 /* rsp_api_export.ver */; };
+		BF0D52A8224D63DC0096DF50 /* memory.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0D5286224D63DB0096DF50 /* memory.h */; };
+		BF0D52A9224D63DC0096DF50 /* hle.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0D5287224D63DB0096DF50 /* hle.h */; };
+		BF0D52AC224D63DC0096DF50 /* ucodes.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0D528A224D63DB0096DF50 /* ucodes.h */; };
+		BF0D52AE224D64420096DF50 /* alist_audio.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D5272224D63DB0096DF50 /* alist_audio.c */; };
+		BF0D52AF224D64420096DF50 /* alist_naudio.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D5284224D63DB0096DF50 /* alist_naudio.c */; };
+		BF0D52B0224D64420096DF50 /* alist_nead.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D527F224D63DB0096DF50 /* alist_nead.c */; };
+		BF0D52B1224D64420096DF50 /* alist.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D5283224D63DB0096DF50 /* alist.c */; };
+		BF0D52B2224D64420096DF50 /* audio.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D528B224D63DB0096DF50 /* audio.c */; };
+		BF0D52B3224D64420096DF50 /* cicx105.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D5280224D63DB0096DF50 /* cicx105.c */; };
+		BF0D52B4224D64420096DF50 /* hle.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D5278224D63DB0096DF50 /* hle.c */; };
+		BF0D52B5224D64420096DF50 /* jpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D5273224D63DB0096DF50 /* jpeg.c */; };
+		BF0D52B6224D64420096DF50 /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D5274224D63DB0096DF50 /* memory.c */; };
+		BF0D52B7224D64420096DF50 /* mp3.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D5289224D63DB0096DF50 /* mp3.c */; };
+		BF0D52B8224D64420096DF50 /* musyx.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D527C224D63DB0096DF50 /* musyx.c */; };
+		BF0D52B9224D64420096DF50 /* osal_dynamiclib_unix.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D527E224D63DB0096DF50 /* osal_dynamiclib_unix.c */; };
+		BF0D52BA224D64420096DF50 /* plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D5285224D63DB0096DF50 /* plugin.c */; };
+		BF0D52BB224D64420096DF50 /* re2.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D527A224D63DB0096DF50 /* re2.c */; };
 		BF2EF811224C1BF60032AD78 /* N64DeltaCore_Video.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF80F224C1BF60032AD78 /* N64DeltaCore_Video.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF2EFA5C224C1C080032AD78 /* DepthBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF859224C1C070032AD78 /* DepthBuffer.h */; };
 		BF2EFA5D224C1C080032AD78 /* Keys.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF85A224C1C070032AD78 /* Keys.h */; };
@@ -380,15 +412,6 @@
 		BF2EFC16224C21B00032AD78 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2EFC15224C21B00032AD78 /* libz.tbd */; };
 		BF2EFC4C224C23B00032AD78 /* MemoryStatus_mupenplus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF931224C1C070032AD78 /* MemoryStatus_mupenplus.cpp */; };
 		BF2EFC4F224C26AF0032AD78 /* Revision.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EFC4E224C26AF0032AD78 /* Revision.h */; };
-		BF2EFCC1224C2CA70032AD78 /* module.c in Sources */ = {isa = PBXBuildFile; fileRef = BF79968F224C09F2009B094F /* module.c */; };
-		BF2EFCC2224C2CA70032AD78 /* osal_dynamiclib_unix.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799698224C09F2009B094F /* osal_dynamiclib_unix.c */; };
-		BF2EFCC3224C2CA70032AD78 /* su.c in Sources */ = {isa = PBXBuildFile; fileRef = BF79968E224C09F2009B094F /* su.c */; };
-		BF2EFCC4224C2CA70032AD78 /* logical.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799682224C09F2009B094F /* logical.c */; };
-		BF2EFCC5224C2CA70032AD78 /* vu.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799683224C09F2009B094F /* vu.c */; };
-		BF2EFCC6224C2CA70032AD78 /* select.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799684224C09F2009B094F /* select.c */; };
-		BF2EFCC7224C2CA70032AD78 /* divide.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799685224C09F2009B094F /* divide.c */; };
-		BF2EFCC8224C2CA70032AD78 /* add.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799687224C09F2009B094F /* add.c */; };
-		BF2EFCC9224C2CA70032AD78 /* multiply.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799688224C09F2009B094F /* multiply.c */; };
 		BF2EFCCB224C2EE40032AD78 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2EFCCA224C2EE40032AD78 /* OpenGLES.framework */; };
 		BF2EFCE3224C317D0032AD78 /* pnginfo.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EFCCD224C317D0032AD78 /* pnginfo.h */; };
 		BF2EFCE4224C317D0032AD78 /* pngtest.c in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCCE224C317D0032AD78 /* pngtest.c */; };
@@ -487,23 +510,6 @@
 		BF79965D224BFF6C009B094F /* sdl_key_converter.c in Sources */ = {isa = PBXBuildFile; fileRef = BF7995EC224BFF6C009B094F /* sdl_key_converter.c */; };
 		BF799668224C0598009B094F /* SDLStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = BF799664224C0598009B094F /* SDLStubs.m */; };
 		BF799678224C09A1009B094F /* N64DeltaCore_RSP.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799676224C09A1009B094F /* N64DeltaCore_RSP.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF7996A5224C09F3009B094F /* pack.h in Headers */ = {isa = PBXBuildFile; fileRef = BF79967E224C09F2009B094F /* pack.h */; };
-		BF7996A6224C09F3009B094F /* divide.h in Headers */ = {isa = PBXBuildFile; fileRef = BF79967F224C09F2009B094F /* divide.h */; };
-		BF7996A7224C09F3009B094F /* multiply.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799680224C09F2009B094F /* multiply.h */; };
-		BF7996A8224C09F3009B094F /* add.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799681224C09F2009B094F /* add.h */; };
-		BF7996AD224C09F3009B094F /* logical.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799686224C09F2009B094F /* logical.h */; };
-		BF7996B0224C09F3009B094F /* select.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799689224C09F2009B094F /* select.h */; };
-		BF7996B1224C09F3009B094F /* vu.h in Headers */ = {isa = PBXBuildFile; fileRef = BF79968A224C09F2009B094F /* vu.h */; };
-		BF7996B2224C09F3009B094F /* my_types.h in Headers */ = {isa = PBXBuildFile; fileRef = BF79968B224C09F2009B094F /* my_types.h */; };
-		BF7996B8224C09F3009B094F /* mupen64plus-rsp-cxd4.vcxproj.filters in Resources */ = {isa = PBXBuildFile; fileRef = BF799694224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj.filters */; };
-		BF7996B9224C09F3009B094F /* mupen64plus-rsp-cxd4.vcxproj in Resources */ = {isa = PBXBuildFile; fileRef = BF799695224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj */; };
-		BF7996BB224C09F3009B094F /* osal_dynamiclib.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799697224C09F2009B094F /* osal_dynamiclib.h */; };
-		BF7996BD224C09F3009B094F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BF799699224C09F2009B094F /* README.md */; };
-		BF7996BE224C09F3009B094F /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = BF79969A224C09F2009B094F /* COPYING */; };
-		BF7996C1224C09F3009B094F /* rsp.h in Headers */ = {isa = PBXBuildFile; fileRef = BF79969D224C09F2009B094F /* rsp.h */; };
-		BF7996C4224C09F3009B094F /* module.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7996A0224C09F2009B094F /* module.h */; };
-		BF7996C5224C09F3009B094F /* SSE2NEON.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7996A2224C09F2009B094F /* SSE2NEON.h */; };
-		BF7996C6224C09F3009B094F /* su.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7996A3224C09F2009B094F /* su.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -543,6 +549,40 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BF0D5266224D63DB0096DF50 /* INSTALL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = INSTALL; sourceTree = "<group>"; };
+		BF0D5267224D63DB0096DF50 /* LICENSES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSES; sourceTree = "<group>"; };
+		BF0D526A224D63DB0096DF50 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		BF0D526C224D63DB0096DF50 /* mupen64plus-rsp-hle.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "mupen64plus-rsp-hle.vcxproj"; sourceTree = "<group>"; };
+		BF0D526D224D63DB0096DF50 /* RELEASE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RELEASE; sourceTree = "<group>"; };
+		BF0D526E224D63DB0096DF50 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BF0D526F224D63DB0096DF50 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		BF0D5270224D63DB0096DF50 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		BF0D5272224D63DB0096DF50 /* alist_audio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = alist_audio.c; sourceTree = "<group>"; };
+		BF0D5273224D63DB0096DF50 /* jpeg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jpeg.c; sourceTree = "<group>"; };
+		BF0D5274224D63DB0096DF50 /* memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = memory.c; sourceTree = "<group>"; };
+		BF0D5275224D63DB0096DF50 /* alist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alist.h; sourceTree = "<group>"; };
+		BF0D5276224D63DB0096DF50 /* arithmetics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arithmetics.h; sourceTree = "<group>"; };
+		BF0D5277224D63DB0096DF50 /* hle_external.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hle_external.h; sourceTree = "<group>"; };
+		BF0D5278224D63DB0096DF50 /* hle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hle.c; sourceTree = "<group>"; };
+		BF0D5279224D63DB0096DF50 /* osal_dynamiclib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = osal_dynamiclib.h; sourceTree = "<group>"; };
+		BF0D527A224D63DB0096DF50 /* re2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = re2.c; sourceTree = "<group>"; };
+		BF0D527B224D63DB0096DF50 /* hle_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hle_internal.h; sourceTree = "<group>"; };
+		BF0D527C224D63DB0096DF50 /* musyx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = musyx.c; sourceTree = "<group>"; };
+		BF0D527D224D63DB0096DF50 /* audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
+		BF0D527E224D63DB0096DF50 /* osal_dynamiclib_unix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = osal_dynamiclib_unix.c; sourceTree = "<group>"; };
+		BF0D527F224D63DB0096DF50 /* alist_nead.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = alist_nead.c; sourceTree = "<group>"; };
+		BF0D5280224D63DB0096DF50 /* cicx105.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cicx105.c; sourceTree = "<group>"; };
+		BF0D5281224D63DB0096DF50 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		BF0D5282224D63DB0096DF50 /* rsp_api_export.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsp_api_export.ver; sourceTree = "<group>"; };
+		BF0D5283224D63DB0096DF50 /* alist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = alist.c; sourceTree = "<group>"; };
+		BF0D5284224D63DB0096DF50 /* alist_naudio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = alist_naudio.c; sourceTree = "<group>"; };
+		BF0D5285224D63DB0096DF50 /* plugin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin.c; sourceTree = "<group>"; };
+		BF0D5286224D63DB0096DF50 /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
+		BF0D5287224D63DB0096DF50 /* hle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hle.h; sourceTree = "<group>"; };
+		BF0D5288224D63DB0096DF50 /* osal_dynamiclib_win32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = osal_dynamiclib_win32.c; sourceTree = "<group>"; };
+		BF0D5289224D63DB0096DF50 /* mp3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mp3.c; sourceTree = "<group>"; };
+		BF0D528A224D63DB0096DF50 /* ucodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucodes.h; sourceTree = "<group>"; };
+		BF0D528B224D63DB0096DF50 /* audio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audio.c; sourceTree = "<group>"; };
 		BF2EF80D224C1BF60032AD78 /* N64DeltaCore_Video.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = N64DeltaCore_Video.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2EF80F224C1BF60032AD78 /* N64DeltaCore_Video.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64DeltaCore_Video.h; sourceTree = "<group>"; };
 		BF2EF810224C1BF60032AD78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1350,34 +1390,6 @@
 		BF799674224C09A1009B094F /* N64DeltaCore_RSP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = N64DeltaCore_RSP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF799676224C09A1009B094F /* N64DeltaCore_RSP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64DeltaCore_RSP.h; sourceTree = "<group>"; };
 		BF799677224C09A1009B094F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF79967E224C09F2009B094F /* pack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pack.h; sourceTree = "<group>"; };
-		BF79967F224C09F2009B094F /* divide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = divide.h; sourceTree = "<group>"; };
-		BF799680224C09F2009B094F /* multiply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = multiply.h; sourceTree = "<group>"; };
-		BF799681224C09F2009B094F /* add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = add.h; sourceTree = "<group>"; };
-		BF799682224C09F2009B094F /* logical.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = logical.c; sourceTree = "<group>"; };
-		BF799683224C09F2009B094F /* vu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vu.c; sourceTree = "<group>"; };
-		BF799684224C09F2009B094F /* select.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = select.c; sourceTree = "<group>"; };
-		BF799685224C09F2009B094F /* divide.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = divide.c; sourceTree = "<group>"; };
-		BF799686224C09F2009B094F /* logical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logical.h; sourceTree = "<group>"; };
-		BF799687224C09F2009B094F /* add.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = add.c; sourceTree = "<group>"; };
-		BF799688224C09F2009B094F /* multiply.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = multiply.c; sourceTree = "<group>"; };
-		BF799689224C09F2009B094F /* select.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = select.h; sourceTree = "<group>"; };
-		BF79968A224C09F2009B094F /* vu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vu.h; sourceTree = "<group>"; };
-		BF79968B224C09F2009B094F /* my_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = my_types.h; sourceTree = "<group>"; };
-		BF79968E224C09F2009B094F /* su.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = su.c; sourceTree = "<group>"; };
-		BF79968F224C09F2009B094F /* module.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = module.c; sourceTree = "<group>"; };
-		BF799692224C09F2009B094F /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		BF799694224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj.filters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "mupen64plus-rsp-cxd4.vcxproj.filters"; sourceTree = "<group>"; };
-		BF799695224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "mupen64plus-rsp-cxd4.vcxproj"; sourceTree = "<group>"; };
-		BF799696224C09F2009B094F /* lto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lto.c; sourceTree = "<group>"; };
-		BF799697224C09F2009B094F /* osal_dynamiclib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = osal_dynamiclib.h; sourceTree = "<group>"; };
-		BF799698224C09F2009B094F /* osal_dynamiclib_unix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = osal_dynamiclib_unix.c; sourceTree = "<group>"; };
-		BF799699224C09F2009B094F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BF79969A224C09F2009B094F /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
-		BF79969D224C09F2009B094F /* rsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rsp.h; sourceTree = "<group>"; };
-		BF7996A0224C09F2009B094F /* module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module.h; sourceTree = "<group>"; };
-		BF7996A2224C09F2009B094F /* SSE2NEON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSE2NEON.h; sourceTree = "<group>"; };
-		BF7996A3224C09F2009B094F /* su.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = su.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1415,6 +1427,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF0D5265224D63DB0096DF50 /* mupen64plus-rsp-hle */ = {
+			isa = PBXGroup;
+			children = (
+				BF0D5266224D63DB0096DF50 /* INSTALL */,
+				BF0D5267224D63DB0096DF50 /* LICENSES */,
+				BF0D5268224D63DB0096DF50 /* projects */,
+				BF0D526D224D63DB0096DF50 /* RELEASE */,
+				BF0D526E224D63DB0096DF50 /* .gitignore */,
+				BF0D526F224D63DB0096DF50 /* .gitattributes */,
+				BF0D5270224D63DB0096DF50 /* .travis.yml */,
+				BF0D5271224D63DB0096DF50 /* src */,
+			);
+			name = "mupen64plus-rsp-hle";
+			path = "Mupen64Plus/mupen64plus-rsp-hle";
+			sourceTree = SOURCE_ROOT;
+		};
+		BF0D5268224D63DB0096DF50 /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				BF0D5269224D63DB0096DF50 /* unix */,
+				BF0D526B224D63DB0096DF50 /* VisualStudio2013 */,
+			);
+			path = projects;
+			sourceTree = "<group>";
+		};
+		BF0D5269224D63DB0096DF50 /* unix */ = {
+			isa = PBXGroup;
+			children = (
+				BF0D526A224D63DB0096DF50 /* Makefile */,
+			);
+			path = unix;
+			sourceTree = "<group>";
+		};
+		BF0D526B224D63DB0096DF50 /* VisualStudio2013 */ = {
+			isa = PBXGroup;
+			children = (
+				BF0D526C224D63DB0096DF50 /* mupen64plus-rsp-hle.vcxproj */,
+			);
+			path = VisualStudio2013;
+			sourceTree = "<group>";
+		};
+		BF0D5271224D63DB0096DF50 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BF0D5272224D63DB0096DF50 /* alist_audio.c */,
+				BF0D5284224D63DB0096DF50 /* alist_naudio.c */,
+				BF0D527F224D63DB0096DF50 /* alist_nead.c */,
+				BF0D5283224D63DB0096DF50 /* alist.c */,
+				BF0D5275224D63DB0096DF50 /* alist.h */,
+				BF0D5276224D63DB0096DF50 /* arithmetics.h */,
+				BF0D528B224D63DB0096DF50 /* audio.c */,
+				BF0D527D224D63DB0096DF50 /* audio.h */,
+				BF0D5280224D63DB0096DF50 /* cicx105.c */,
+				BF0D5281224D63DB0096DF50 /* common.h */,
+				BF0D5277224D63DB0096DF50 /* hle_external.h */,
+				BF0D527B224D63DB0096DF50 /* hle_internal.h */,
+				BF0D5278224D63DB0096DF50 /* hle.c */,
+				BF0D5287224D63DB0096DF50 /* hle.h */,
+				BF0D5273224D63DB0096DF50 /* jpeg.c */,
+				BF0D5274224D63DB0096DF50 /* memory.c */,
+				BF0D5286224D63DB0096DF50 /* memory.h */,
+				BF0D5289224D63DB0096DF50 /* mp3.c */,
+				BF0D527C224D63DB0096DF50 /* musyx.c */,
+				BF0D527E224D63DB0096DF50 /* osal_dynamiclib_unix.c */,
+				BF0D5288224D63DB0096DF50 /* osal_dynamiclib_win32.c */,
+				BF0D5279224D63DB0096DF50 /* osal_dynamiclib.h */,
+				BF0D5285224D63DB0096DF50 /* plugin.c */,
+				BF0D527A224D63DB0096DF50 /* re2.c */,
+				BF0D5282224D63DB0096DF50 /* rsp_api_export.ver */,
+				BF0D528A224D63DB0096DF50 /* ucodes.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		BF2EF80E224C1BF60032AD78 /* N64DeltaCore-Video */ = {
 			isa = PBXGroup;
 			children = (
@@ -3107,85 +3193,9 @@
 			children = (
 				BF799676224C09A1009B094F /* N64DeltaCore_RSP.h */,
 				BF799677224C09A1009B094F /* Info.plist */,
-				BF79967C224C09F2009B094F /* mupen64plus-rsp-cxd4 */,
+				BF0D5265224D63DB0096DF50 /* mupen64plus-rsp-hle */,
 			);
 			path = "N64DeltaCore-RSP";
-			sourceTree = "<group>";
-		};
-		BF79967C224C09F2009B094F /* mupen64plus-rsp-cxd4 */ = {
-			isa = PBXGroup;
-			children = (
-				BF79969A224C09F2009B094F /* COPYING */,
-				BF799696224C09F2009B094F /* lto.c */,
-				BF79968F224C09F2009B094F /* module.c */,
-				BF799698224C09F2009B094F /* osal_dynamiclib_unix.c */,
-				BF79968E224C09F2009B094F /* su.c */,
-				BF7996A0224C09F2009B094F /* module.h */,
-				BF79968B224C09F2009B094F /* my_types.h */,
-				BF799697224C09F2009B094F /* osal_dynamiclib.h */,
-				BF79969D224C09F2009B094F /* rsp.h */,
-				BF7996A3224C09F2009B094F /* su.h */,
-				BF799699224C09F2009B094F /* README.md */,
-				BF799690224C09F2009B094F /* projects */,
-				BF7996A1224C09F2009B094F /* sse2neon */,
-				BF79967D224C09F2009B094F /* vu */,
-			);
-			name = "mupen64plus-rsp-cxd4";
-			path = "Mupen64Plus/mupen64plus-rsp-cxd4";
-			sourceTree = SOURCE_ROOT;
-		};
-		BF79967D224C09F2009B094F /* vu */ = {
-			isa = PBXGroup;
-			children = (
-				BF79967E224C09F2009B094F /* pack.h */,
-				BF79967F224C09F2009B094F /* divide.h */,
-				BF799680224C09F2009B094F /* multiply.h */,
-				BF799681224C09F2009B094F /* add.h */,
-				BF799682224C09F2009B094F /* logical.c */,
-				BF799683224C09F2009B094F /* vu.c */,
-				BF799684224C09F2009B094F /* select.c */,
-				BF799685224C09F2009B094F /* divide.c */,
-				BF799686224C09F2009B094F /* logical.h */,
-				BF799687224C09F2009B094F /* add.c */,
-				BF799688224C09F2009B094F /* multiply.c */,
-				BF799689224C09F2009B094F /* select.h */,
-				BF79968A224C09F2009B094F /* vu.h */,
-			);
-			path = vu;
-			sourceTree = "<group>";
-		};
-		BF799690224C09F2009B094F /* projects */ = {
-			isa = PBXGroup;
-			children = (
-				BF799691224C09F2009B094F /* unix */,
-				BF799693224C09F2009B094F /* VisualStudio2013 */,
-			);
-			path = projects;
-			sourceTree = "<group>";
-		};
-		BF799691224C09F2009B094F /* unix */ = {
-			isa = PBXGroup;
-			children = (
-				BF799692224C09F2009B094F /* Makefile */,
-			);
-			path = unix;
-			sourceTree = "<group>";
-		};
-		BF799693224C09F2009B094F /* VisualStudio2013 */ = {
-			isa = PBXGroup;
-			children = (
-				BF799694224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj.filters */,
-				BF799695224C09F2009B094F /* mupen64plus-rsp-cxd4.vcxproj */,
-			);
-			path = VisualStudio2013;
-			sourceTree = "<group>";
-		};
-		BF7996A1224C09F2009B094F /* sse2neon */ = {
-			isa = PBXGroup;
-			children = (
-				BF7996A2224C09F2009B094F /* SSE2NEON.h */,
-			);
-			path = sse2neon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3471,20 +3481,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF7996C6224C09F3009B094F /* su.h in Headers */,
-				BF7996C1224C09F3009B094F /* rsp.h in Headers */,
-				BF7996B0224C09F3009B094F /* select.h in Headers */,
-				BF7996A7224C09F3009B094F /* multiply.h in Headers */,
+				BF0D5298224D63DC0096DF50 /* arithmetics.h in Headers */,
+				BF0D52AC224D63DC0096DF50 /* ucodes.h in Headers */,
+				BF0D529F224D63DC0096DF50 /* audio.h in Headers */,
 				BF799678224C09A1009B094F /* N64DeltaCore_RSP.h in Headers */,
-				BF7996C4224C09F3009B094F /* module.h in Headers */,
-				BF7996A5224C09F3009B094F /* pack.h in Headers */,
-				BF7996A6224C09F3009B094F /* divide.h in Headers */,
-				BF7996B1224C09F3009B094F /* vu.h in Headers */,
-				BF7996B2224C09F3009B094F /* my_types.h in Headers */,
-				BF7996BB224C09F3009B094F /* osal_dynamiclib.h in Headers */,
-				BF7996C5224C09F3009B094F /* SSE2NEON.h in Headers */,
-				BF7996AD224C09F3009B094F /* logical.h in Headers */,
-				BF7996A8224C09F3009B094F /* add.h in Headers */,
+				BF0D529D224D63DC0096DF50 /* hle_internal.h in Headers */,
+				BF0D529B224D63DC0096DF50 /* osal_dynamiclib.h in Headers */,
+				BF0D52A9224D63DC0096DF50 /* hle.h in Headers */,
+				BF0D5297224D63DC0096DF50 /* alist.h in Headers */,
+				BF0D5299224D63DC0096DF50 /* hle_external.h in Headers */,
+				BF0D52A8224D63DC0096DF50 /* memory.h in Headers */,
+				BF0D52A3224D63DC0096DF50 /* common.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3632,10 +3639,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF7996BE224C09F3009B094F /* COPYING in Resources */,
-				BF7996BD224C09F3009B094F /* README.md in Resources */,
-				BF7996B8224C09F3009B094F /* mupen64plus-rsp-cxd4.vcxproj.filters in Resources */,
-				BF7996B9224C09F3009B094F /* mupen64plus-rsp-cxd4.vcxproj in Resources */,
+				BF0D5290224D63DC0096DF50 /* RELEASE in Resources */,
+				BF0D528F224D63DC0096DF50 /* mupen64plus-rsp-hle.vcxproj in Resources */,
+				BF0D52A4224D63DC0096DF50 /* rsp_api_export.ver in Resources */,
+				BF0D5293224D63DC0096DF50 /* .travis.yml in Resources */,
+				BF0D5292224D63DC0096DF50 /* .gitattributes in Resources */,
+				BF0D528D224D63DB0096DF50 /* LICENSES in Resources */,
+				BF0D5291224D63DC0096DF50 /* .gitignore in Resources */,
+				BF0D528C224D63DB0096DF50 /* INSTALL in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3890,15 +3901,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2EFCC2224C2CA70032AD78 /* osal_dynamiclib_unix.c in Sources */,
-				BF2EFCC5224C2CA70032AD78 /* vu.c in Sources */,
-				BF2EFCC4224C2CA70032AD78 /* logical.c in Sources */,
-				BF2EFCC7224C2CA70032AD78 /* divide.c in Sources */,
-				BF2EFCC9224C2CA70032AD78 /* multiply.c in Sources */,
-				BF2EFCC6224C2CA70032AD78 /* select.c in Sources */,
-				BF2EFCC1224C2CA70032AD78 /* module.c in Sources */,
-				BF2EFCC3224C2CA70032AD78 /* su.c in Sources */,
-				BF2EFCC8224C2CA70032AD78 /* add.c in Sources */,
+				BF0D52B9224D64420096DF50 /* osal_dynamiclib_unix.c in Sources */,
+				BF0D52B7224D64420096DF50 /* mp3.c in Sources */,
+				BF0D52B0224D64420096DF50 /* alist_nead.c in Sources */,
+				BF0D52BA224D64420096DF50 /* plugin.c in Sources */,
+				BF0D52B1224D64420096DF50 /* alist.c in Sources */,
+				BF0D52B4224D64420096DF50 /* hle.c in Sources */,
+				BF0D52AE224D64420096DF50 /* alist_audio.c in Sources */,
+				BF0D52B8224D64420096DF50 /* musyx.c in Sources */,
+				BF0D52B6224D64420096DF50 /* memory.c in Sources */,
+				BF0D52B3224D64420096DF50 /* cicx105.c in Sources */,
+				BF0D52B5224D64420096DF50 /* jpeg.c in Sources */,
+				BF0D52B2224D64420096DF50 /* audio.c in Sources */,
+				BF0D52AF224D64420096DF50 /* alist_naudio.c in Sources */,
+				BF0D52BB224D64420096DF50 /* re2.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4319,10 +4335,6 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				OTHER_CFLAGS = (
-					"$(inherited)",
-					"-DM64P_PLUGIN_API",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rileytestut.N64DeltaCore-RSP";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -4348,10 +4360,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-				);
-				OTHER_CFLAGS = (
-					"$(inherited)",
-					"-DM64P_PLUGIN_API",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rileytestut.N64DeltaCore-RSP";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
