@@ -24,6 +24,8 @@
 #include "main/version.h"
 #include "main/main.h"
 #include "osd.h"
+#include "backends/api/storage_backend.h"
+#include "backends/file_storage.h"
 
 #include "plugin/plugin.h"
 
@@ -52,6 +54,8 @@
 @property (nonatomic) BOOL didLoadPlugins;
 @property (nonatomic, assign, getter=isRunning) BOOL running;
 
+@property (nonatomic, strong, readonly) NSMutableDictionary<NSNumber *, void (^)(void)> *stateCallbacks;
+
 @property (nonatomic, strong, readwrite) AVAudioFormat *preferredAudioFormat;
 @property (nonatomic, readwrite) CGSize preferredVideoDimensions;
 
@@ -70,6 +74,15 @@ static void MupenDebugCallback(void *context, int level, const char *message)
 static void MupenStateCallback(void *context, m64p_core_param paramType, int newValue)
 {
     NSLog(@"Mupen: param %d -> %d", paramType, newValue);
+    
+    void (^callback)(void) = N64EmulatorBridge.sharedBridge.stateCallbacks[@(paramType)];
+    
+    if (callback)
+    {
+        callback();
+    }
+    
+    N64EmulatorBridge.sharedBridge.stateCallbacks[@(paramType)] = nil;
 }
 
 static void *dlopen_N64DeltaCore()
@@ -191,6 +204,8 @@ static void MupenSetAudioSpeed(int percent)
         _beginFrameSemaphore = dispatch_semaphore_create(0);
         _endFrameSemaphore = dispatch_semaphore_create(0);
         _stopEmulationSemaphore = dispatch_semaphore_create(0);
+        
+        _stateCallbacks = [NSMutableDictionary dictionary];
         
         _preferredAudioFormat = [[AVAudioFormat alloc] initWithCommonFormat:AVAudioPCMFormatInt16 sampleRate:44100 channels:2 interleaved:YES];
         _preferredVideoDimensions = CGSizeMake(640, 480);
@@ -383,20 +398,89 @@ static void MupenSetAudioSpeed(int percent)
 
 - (void)saveSaveStateToURL:(NSURL *)url
 {
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    [self registerCallbackForType:M64CORE_STATE_SAVECOMPLETE callback:^{
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    CoreDoCommand(M64CMD_STATE_SAVE, 1, (void *)[url fileSystemRepresentation]);
+    
+    if (![self isRunning])
+    {
+        [self runFrame];
+    }
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 }
 
 - (void)loadSaveStateFromURL:(NSURL *)url
 {
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    [self registerCallbackForType:M64CORE_STATE_LOADCOMPLETE callback:^{
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    CoreDoCommand(M64CMD_STATE_LOAD, 1, (void *)[url fileSystemRepresentation]);
+    
+    if (![self isRunning])
+    {
+        [self runFrame];
+    }
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 }
 
 #pragma mark - Game Saves -
 
 - (void)saveGameSaveToURL:(NSURL *)url
 {
+    struct file_storage *storage = NULL;
+    
+    if (g_dev.cart.use_flashram == -1)
+    {
+        storage = (struct file_storage *)g_dev.cart.sram.storage;
+    }
+    else if (g_dev.cart.use_flashram == 0)
+    {
+        storage = (struct file_storage *)g_dev.cart.eeprom.storage;
+    }
+    else if (g_dev.cart.use_flashram == 1)
+    {
+        storage = (struct file_storage *)g_dev.cart.flashram.storage;
+    }
+    
+    NSData *data = [NSData dataWithBytes:storage->data length:storage->size];
+    [data writeToURL:url atomically:YES];
 }
 
 - (void)loadGameSaveFromURL:(NSURL *)url
 {
+    struct file_storage *storage = NULL;
+    
+    if (g_dev.cart.use_flashram == -1)
+    {
+        storage = (struct file_storage *)g_dev.cart.sram.storage;
+    }
+    else if (g_dev.cart.use_flashram == 0)
+    {
+        storage = (struct file_storage *)g_dev.cart.eeprom.storage;
+    }
+    else if (g_dev.cart.use_flashram == 1)
+    {
+        storage = (struct file_storage *)g_dev.cart.flashram.storage;
+    }
+    
+    NSData *saveData = [NSData dataWithContentsOfURL:url];
+    if (saveData == nil)
+    {
+        memset(storage->data, 0xFF, storage->size);
+    }
+    else
+    {
+        memcpy(storage->data, saveData.bytes, storage->size);
+    }
 }
 
 #pragma mark - Cheats -
@@ -453,6 +537,11 @@ static void MupenSetAudioSpeed(int percent)
     }
     
     return YES;
+}
+
+- (void)registerCallbackForType:(m64p_core_param)callbackType callback:(void (^)(void))callback
+{
+    self.stateCallbacks[@(callbackType)] = callback;
 }
 
 #pragma mark - Getters/Setters -
