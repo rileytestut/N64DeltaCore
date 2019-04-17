@@ -39,6 +39,15 @@
 		BF0D52B9224D64420096DF50 /* osal_dynamiclib_unix.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D527E224D63DB0096DF50 /* osal_dynamiclib_unix.c */; };
 		BF0D52BA224D64420096DF50 /* plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D5285224D63DB0096DF50 /* plugin.c */; };
 		BF0D52BB224D64420096DF50 /* re2.c in Sources */ = {isa = PBXBuildFile; fileRef = BF0D527A224D63DB0096DF50 /* re2.c */; };
+		BF21773022554FC900D74210 /* dd_controller.c in Sources */ = {isa = PBXBuildFile; fileRef = BF7995BA224BFF6C009B094F /* dd_controller.c */; };
+		BF21773122554FDD00D74210 /* video_capture_backend.c in Sources */ = {isa = PBXBuildFile; fileRef = BF79950A224BFF6C009B094F /* video_capture_backend.c */; };
+		BF21773222554FED00D74210 /* biopak.c in Sources */ = {isa = PBXBuildFile; fileRef = BF7995CC224BFF6C009B094F /* biopak.c */; };
+		BF2177332255506100D74210 /* dummy_video_capture.c in Sources */ = {isa = PBXBuildFile; fileRef = BF79950D224BFF6C009B094F /* dummy_video_capture.c */; };
+		BF21773C22556B2300D74210 /* MemoryStatus_mupenplus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF931224C1C070032AD78 /* MemoryStatus_mupenplus.cpp */; };
+		BF21773F22556B7100D74210 /* TxDbg.h in Headers */ = {isa = PBXBuildFile; fileRef = BF21773D22556B6E00D74210 /* TxDbg.h */; };
+		BF21774322556BD100D74210 /* glsl_FXAA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF9E6224C1C080032AD78 /* glsl_FXAA.cpp */; };
+		BF21774422556BE400D74210 /* F5Rogue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF882224C1C070032AD78 /* F5Rogue.cpp */; };
+		BF21774522556BF800D74210 /* F5Indi_Naboo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF887224C1C070032AD78 /* F5Indi_Naboo.cpp */; };
 		BF2EF811224C1BF60032AD78 /* N64DeltaCore_Video.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF80F224C1BF60032AD78 /* N64DeltaCore_Video.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF2EFA5C224C1C080032AD78 /* DepthBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF859224C1C070032AD78 /* DepthBuffer.h */; };
 		BF2EFA5D224C1C080032AD78 /* Keys.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF85A224C1C070032AD78 /* Keys.h */; };
@@ -80,12 +89,10 @@
 		BF2EFA81224C1C080032AD78 /* F3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF87F224C1C070032AD78 /* F3D.cpp */; };
 		BF2EFA82224C1C080032AD78 /* F5Rogue.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF880224C1C070032AD78 /* F5Rogue.h */; };
 		BF2EFA83224C1C080032AD78 /* L3DEX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF881224C1C070032AD78 /* L3DEX.cpp */; };
-		BF2EFA84224C1C080032AD78 /* F5Rogue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF882224C1C070032AD78 /* F5Rogue.cpp */; };
 		BF2EFA85224C1C080032AD78 /* F3DSETA.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF883224C1C070032AD78 /* F3DSETA.h */; };
 		BF2EFA86224C1C080032AD78 /* T3DUX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF884224C1C070032AD78 /* T3DUX.cpp */; };
 		BF2EFA87224C1C080032AD78 /* L3DEX2.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF885224C1C070032AD78 /* L3DEX2.h */; };
 		BF2EFA88224C1C080032AD78 /* F5Indi_Naboo.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF886224C1C070032AD78 /* F5Indi_Naboo.h */; };
-		BF2EFA89224C1C080032AD78 /* F5Indi_Naboo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF887224C1C070032AD78 /* F5Indi_Naboo.cpp */; };
 		BF2EFA8A224C1C080032AD78 /* T3DUX.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF888224C1C070032AD78 /* T3DUX.h */; };
 		BF2EFA8B224C1C080032AD78 /* Turbo3D.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF889224C1C070032AD78 /* Turbo3D.h */; };
 		BF2EFA8C224C1C080032AD78 /* F3DEX.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF88A224C1C070032AD78 /* F3DEX.h */; };
@@ -280,7 +287,6 @@
 		BF2EFB70224C1C090032AD78 /* TextureFilters_xbrz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF97D224C1C080032AD78 /* TextureFilters_xbrz.cpp */; };
 		BF2EFB72224C1C090032AD78 /* TxTexCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF97F224C1C080032AD78 /* TxTexCache.cpp */; };
 		BF2EFB74224C1C090032AD78 /* TextureFilters_hq2x.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF981224C1C080032AD78 /* TextureFilters_hq2x.h */; };
-		BF2EFB79224C1C090032AD78 /* TxDbg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF987224C1C080032AD78 /* TxDbg.cpp */; };
 		BF2EFB7A224C1C090032AD78 /* TxFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF988224C1C080032AD78 /* TxFilter.h */; };
 		BF2EFB7B224C1C090032AD78 /* TextureFilters_hq2x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF989224C1C080032AD78 /* TextureFilters_hq2x.cpp */; };
 		BF2EFB7C224C1C090032AD78 /* TxUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF98A224C1C080032AD78 /* TxUtil.h */; };
@@ -347,7 +353,6 @@
 		BF2EFBCD224C1C0A0032AD78 /* opengl_BufferManipulationObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF9E2224C1C080032AD78 /* opengl_BufferManipulationObjectFactory.cpp */; };
 		BF2EFBCE224C1C0A0032AD78 /* opengl_CachedFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF9E3224C1C080032AD78 /* opengl_CachedFunctions.h */; };
 		BF2EFBCF224C1C0A0032AD78 /* glsl_FXAA.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF9E5224C1C080032AD78 /* glsl_FXAA.h */; };
-		BF2EFBD0224C1C0A0032AD78 /* glsl_FXAA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF9E6224C1C080032AD78 /* glsl_FXAA.cpp */; };
 		BF2EFBD1224C1C0A0032AD78 /* glsl_CombinerProgramUniformFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF9E7224C1C080032AD78 /* glsl_CombinerProgramUniformFactory.h */; };
 		BF2EFBD2224C1C0A0032AD78 /* glsl_CombinerProgramBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF9E8224C1C080032AD78 /* glsl_CombinerProgramBuilder.h */; };
 		BF2EFBD3224C1C0A0032AD78 /* glsl_CombinerProgramImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF9E9224C1C080032AD78 /* glsl_CombinerProgramImpl.cpp */; };
@@ -407,10 +412,7 @@
 		BF2EFC10224C1C0A0032AD78 /* GraphicsDrawer.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EFA2A224C1C080032AD78 /* GraphicsDrawer.h */; };
 		BF2EFC11224C1C0A0032AD78 /* VI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFA2B224C1C080032AD78 /* VI.cpp */; };
 		BF2EFC12224C1C0A0032AD78 /* DisplayLoadProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EFA2C224C1C080032AD78 /* DisplayLoadProgress.h */; };
-		BF2EFC13224C21A60032AD78 /* GLideN64.custom.ini in Resources */ = {isa = PBXBuildFile; fileRef = BF2EF84C224C1C070032AD78 /* GLideN64.custom.ini */; };
-		BF2EFC14224C21A80032AD78 /* GLideN64.ini in Resources */ = {isa = PBXBuildFile; fileRef = BF2EF84D224C1C070032AD78 /* GLideN64.ini */; };
 		BF2EFC16224C21B00032AD78 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2EFC15224C21B00032AD78 /* libz.tbd */; };
-		BF2EFC4C224C23B00032AD78 /* MemoryStatus_mupenplus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF931224C1C070032AD78 /* MemoryStatus_mupenplus.cpp */; };
 		BF2EFC4F224C26AF0032AD78 /* Revision.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EFC4E224C26AF0032AD78 /* Revision.h */; };
 		BF2EFCCB224C2EE40032AD78 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2EFCCA224C2EE40032AD78 /* OpenGLES.framework */; };
 		BF2EFCE3224C317D0032AD78 /* pnginfo.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EFCCD224C317D0032AD78 /* pnginfo.h */; };
@@ -436,10 +438,13 @@
 		BF2EFCF8224C317D0032AD78 /* pngset.c in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCE2224C317D0032AD78 /* pngset.c */; };
 		BF2EFCF9224C31B70032AD78 /* png.c in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCDF224C317D0032AD78 /* png.c */; };
 		BF2EFCFE224C32EA0032AD78 /* TextDrawerStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF9C8224C1C080032AD78 /* TextDrawerStub.cpp */; };
-		BF2EFD00224C33830032AD78 /* N64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCFF224C33830032AD78 /* N64.swift */; };
 		BF2EFD02224C339E0032AD78 /* N64DeltaCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFD01224C339D0032AD78 /* N64DeltaCore.m */; };
 		BF2EFD0C224C39AD0032AD78 /* N64EmulatorBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EFD04224C370C0032AD78 /* N64EmulatorBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF2EFD0D224C39B10032AD78 /* N64EmulatorBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFD05224C370C0032AD78 /* N64EmulatorBridge.m */; };
+		BF31A1F12267A81100C64A1B /* TxDbg_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF31A1F02267A81000C64A1B /* TxDbg_ios.mm */; };
+		BF6E4E622261721A00E24788 /* mupen64plus.ini in Resources */ = {isa = PBXBuildFile; fileRef = BF7994F3224BFF6C009B094F /* mupen64plus.ini */; };
+		BF6E4E632261722900E24788 /* GLideN64.ini in Resources */ = {isa = PBXBuildFile; fileRef = BF2EF84D224C1C070032AD78 /* GLideN64.ini */; };
+		BF6E4E642261722C00E24788 /* GLideN64.custom.ini in Resources */ = {isa = PBXBuildFile; fileRef = BF2EF84C224C1C070032AD78 /* GLideN64.custom.ini */; };
 		BF799019224BF59E009B094F /* N64DeltaCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799017224BF59E009B094F /* N64DeltaCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF7994A6224BFDCF009B094F /* libMupen64Plus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF79949A224BFDAA009B094F /* libMupen64Plus.a */; };
 		BF7995F3224BFF6C009B094F /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = BF7994E1224BFF6C009B094F /* md5.c */; };
@@ -510,6 +515,7 @@
 		BF79965D224BFF6C009B094F /* sdl_key_converter.c in Sources */ = {isa = PBXBuildFile; fileRef = BF7995EC224BFF6C009B094F /* sdl_key_converter.c */; };
 		BF799668224C0598009B094F /* SDLStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = BF799664224C0598009B094F /* SDLStubs.m */; };
 		BF799678224C09A1009B094F /* N64DeltaCore_RSP.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799676224C09A1009B094F /* N64DeltaCore_RSP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFCB0FD722568D330056F983 /* N64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCFF224C33830032AD78 /* N64.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -583,6 +589,9 @@
 		BF0D5289224D63DB0096DF50 /* mp3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mp3.c; sourceTree = "<group>"; };
 		BF0D528A224D63DB0096DF50 /* ucodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucodes.h; sourceTree = "<group>"; };
 		BF0D528B224D63DB0096DF50 /* audio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audio.c; sourceTree = "<group>"; };
+		BF21773D22556B6E00D74210 /* TxDbg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TxDbg.h; sourceTree = "<group>"; };
+		BF21773E22556B7000D74210 /* TxDbg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TxDbg.cpp; sourceTree = "<group>"; };
+		BF21774122556B8B00D74210 /* TxDbg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TxDbg.cpp; sourceTree = "<group>"; };
 		BF2EF80D224C1BF60032AD78 /* N64DeltaCore_Video.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = N64DeltaCore_Video.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2EF80F224C1BF60032AD78 /* N64DeltaCore_Video.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64DeltaCore_Video.h; sourceTree = "<group>"; };
 		BF2EF810224C1BF60032AD78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -918,7 +927,6 @@
 		BF2EF984224C1C080032AD78 /* Makefile.vc8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.vc8; sourceTree = "<group>"; };
 		BF2EF985224C1C080032AD78 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		BF2EF986224C1C080032AD78 /* Makefile.gcc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.gcc; sourceTree = "<group>"; };
-		BF2EF987224C1C080032AD78 /* TxDbg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TxDbg.cpp; sourceTree = "<group>"; };
 		BF2EF988224C1C080032AD78 /* TxFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TxFilter.h; sourceTree = "<group>"; };
 		BF2EF989224C1C080032AD78 /* TextureFilters_hq2x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureFilters_hq2x.cpp; sourceTree = "<group>"; };
 		BF2EF98A224C1C080032AD78 /* TxUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TxUtil.h; sourceTree = "<group>"; };
@@ -1101,6 +1109,7 @@
 		BF2EFD01224C339D0032AD78 /* N64DeltaCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = N64DeltaCore.m; sourceTree = "<group>"; };
 		BF2EFD04224C370C0032AD78 /* N64EmulatorBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64EmulatorBridge.h; sourceTree = "<group>"; };
 		BF2EFD05224C370C0032AD78 /* N64EmulatorBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = N64EmulatorBridge.m; sourceTree = "<group>"; };
+		BF31A1F02267A81000C64A1B /* TxDbg_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TxDbg_ios.mm; sourceTree = "<group>"; };
 		BF799014224BF59E009B094F /* N64DeltaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = N64DeltaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF799017224BF59E009B094F /* N64DeltaCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64DeltaCore.h; sourceTree = "<group>"; };
 		BF799018224BF59E009B094F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1505,6 +1514,7 @@
 			isa = PBXGroup;
 			children = (
 				BF2EF80F224C1BF60032AD78 /* N64DeltaCore_Video.h */,
+				BF31A1F02267A81000C64A1B /* TxDbg_ios.mm */,
 				BF2EF810224C1BF60032AD78 /* Info.plist */,
 				BF2EF815224C1C070032AD78 /* GLideN64 */,
 				BF2EFCCC224C317D0032AD78 /* libpng */,
@@ -2146,51 +2156,53 @@
 		BF2EF96F224C1C080032AD78 /* GLideNHQ */ = {
 			isa = PBXGroup;
 			children = (
-				BF2EF970224C1C080032AD78 /* TxReSample.h */,
-				BF2EF971224C1C080032AD78 /* TxQuantize.h */,
-				BF2EF972224C1C080032AD78 /* TxImage.cpp */,
-				BF2EF973224C1C080032AD78 /* TextureFilters.cpp */,
-				BF2EF974224C1C080032AD78 /* TxInternal.h */,
-				BF2EF975224C1C080032AD78 /* inc */,
+				BF2EF9A3224C1C080032AD78 /* bldno.cpp */,
+				BF2EF98D224C1C080032AD78 /* Ext_TxFilter.cpp */,
+				BF2EF9A6224C1C080032AD78 /* TextureFilters_2xsai.cpp */,
+				BF2EF989224C1C080032AD78 /* TextureFilters_hq2x.cpp */,
 				BF2EF97C224C1C080032AD78 /* TextureFilters_hq4x.cpp */,
 				BF2EF97D224C1C080032AD78 /* TextureFilters_xbrz.cpp */,
-				BF2EF97E224C1C080032AD78 /* gpl-2.0.txt */,
-				BF2EF97F224C1C080032AD78 /* TxTexCache.cpp */,
-				BF2EF980224C1C080032AD78 /* CMakeLists.txt */,
-				BF2EF981224C1C080032AD78 /* TextureFilters_hq2x.h */,
-				BF2EF982224C1C080032AD78 /* test */,
-				BF2EF987224C1C080032AD78 /* TxDbg.cpp */,
-				BF2EF988224C1C080032AD78 /* TxFilter.h */,
-				BF2EF989224C1C080032AD78 /* TextureFilters_hq2x.cpp */,
-				BF2EF98A224C1C080032AD78 /* TxUtil.h */,
-				BF2EF98B224C1C080032AD78 /* txWidestringWrapper.cpp */,
+				BF2EF973224C1C080032AD78 /* TextureFilters.cpp */,
+				BF2EF999224C1C080032AD78 /* TxCache.cpp */,
+				BF21774122556B8B00D74210 /* TxDbg.cpp */,
+				BF2EF993224C1C080032AD78 /* TxFilter.cpp */,
+				BF2EF9A8224C1C080032AD78 /* TxFilterExport.cpp */,
+				BF2EF997224C1C080032AD78 /* TxHiResCache.cpp */,
+				BF2EF972224C1C080032AD78 /* TxImage.cpp */,
 				BF2EF98C224C1C080032AD78 /* TxQuantize.cpp */,
-				BF2EF98D224C1C080032AD78 /* Ext_TxFilter.cpp */,
-				BF2EF98E224C1C080032AD78 /* TxImage.h */,
+				BF2EF9A5224C1C080032AD78 /* TxReSample.cpp */,
+				BF2EF97F224C1C080032AD78 /* TxTexCache.cpp */,
+				BF2EF99A224C1C080032AD78 /* TxUtil.cpp */,
+				BF2EF98B224C1C080032AD78 /* txWidestringWrapper.cpp */,
+				BF2EF9A2224C1C080032AD78 /* bldno.h */,
+				BF2EF9A1224C1C080032AD78 /* Ext_TxFilter.h */,
+				BF2EF998224C1C080032AD78 /* TextureFilters_2xsai.h */,
+				BF2EF981224C1C080032AD78 /* TextureFilters_hq2x.h */,
+				BF2EF9A9224C1C080032AD78 /* TextureFilters_hq4x.h */,
+				BF2EF99F224C1C080032AD78 /* TextureFilters_lq2x.h */,
 				BF2EF98F224C1C080032AD78 /* TextureFilters_xbrz.h */,
 				BF2EF990224C1C080032AD78 /* TextureFilters.h */,
-				BF2EF991224C1C080032AD78 /* TxDbg.h */,
-				BF2EF992224C1C080032AD78 /* TxHiResCache.h */,
-				BF2EF993224C1C080032AD78 /* TxFilter.cpp */,
-				BF2EF994224C1C080032AD78 /* txWidestringWrapper.h */,
-				BF2EF995224C1C080032AD78 /* TxTexCache.h */,
-				BF2EF996224C1C080032AD78 /* GlideHQ.rc */,
-				BF2EF997224C1C080032AD78 /* TxHiResCache.cpp */,
-				BF2EF998224C1C080032AD78 /* TextureFilters_2xsai.h */,
-				BF2EF999224C1C080032AD78 /* TxCache.cpp */,
-				BF2EF99A224C1C080032AD78 /* TxUtil.cpp */,
-				BF2EF99B224C1C080032AD78 /* lib */,
-				BF2EF99F224C1C080032AD78 /* TextureFilters_lq2x.h */,
-				BF2EF9A0224C1C080032AD78 /* README.txt */,
-				BF2EF9A1224C1C080032AD78 /* Ext_TxFilter.h */,
-				BF2EF9A2224C1C080032AD78 /* bldno.h */,
-				BF2EF9A3224C1C080032AD78 /* bldno.cpp */,
-				BF2EF9A4224C1C080032AD78 /* mupen64plus-video-glidenhq.mk */,
-				BF2EF9A5224C1C080032AD78 /* TxReSample.cpp */,
-				BF2EF9A6224C1C080032AD78 /* TextureFilters_2xsai.cpp */,
 				BF2EF9A7224C1C080032AD78 /* TxCache.h */,
-				BF2EF9A8224C1C080032AD78 /* TxFilterExport.cpp */,
-				BF2EF9A9224C1C080032AD78 /* TextureFilters_hq4x.h */,
+				BF21773E22556B7000D74210 /* TxDbg.cpp */,
+				BF2EF991224C1C080032AD78 /* TxDbg.h */,
+				BF2EF988224C1C080032AD78 /* TxFilter.h */,
+				BF2EF992224C1C080032AD78 /* TxHiResCache.h */,
+				BF2EF98E224C1C080032AD78 /* TxImage.h */,
+				BF2EF974224C1C080032AD78 /* TxInternal.h */,
+				BF2EF971224C1C080032AD78 /* TxQuantize.h */,
+				BF21773D22556B6E00D74210 /* TxDbg.h */,
+				BF2EF970224C1C080032AD78 /* TxReSample.h */,
+				BF2EF995224C1C080032AD78 /* TxTexCache.h */,
+				BF2EF98A224C1C080032AD78 /* TxUtil.h */,
+				BF2EF994224C1C080032AD78 /* txWidestringWrapper.h */,
+				BF2EF9A4224C1C080032AD78 /* mupen64plus-video-glidenhq.mk */,
+				BF2EF996224C1C080032AD78 /* GlideHQ.rc */,
+				BF2EF980224C1C080032AD78 /* CMakeLists.txt */,
+				BF2EF97E224C1C080032AD78 /* gpl-2.0.txt */,
+				BF2EF9A0224C1C080032AD78 /* README.txt */,
+				BF2EF975224C1C080032AD78 /* inc */,
+				BF2EF99B224C1C080032AD78 /* lib */,
+				BF2EF982224C1C080032AD78 /* test */,
 			);
 			path = GLideNHQ;
 			sourceTree = "<group>";
@@ -3400,6 +3412,7 @@
 				BF2EFAA2224C1C090032AD78 /* ftconfig.h in Headers */,
 				BF2EFA8B224C1C080032AD78 /* Turbo3D.h in Headers */,
 				BF2EFBC1224C1C0A0032AD78 /* PixelBuffer.h in Headers */,
+				BF21773F22556B7100D74210 /* TxDbg.h in Headers */,
 				BF2EFBEC224C1C0A0032AD78 /* opengl_BufferedDrawer.h in Headers */,
 				BF2EFA5F224C1C080032AD78 /* PluginAPI.h in Headers */,
 				BF2EFAEE224C1C090032AD78 /* ftlcdfil.h in Headers */,
@@ -3623,8 +3636,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2EFC13224C21A60032AD78 /* GLideN64.custom.ini in Resources */,
-				BF2EFC14224C21A80032AD78 /* GLideN64.ini in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3632,6 +3643,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6E4E622261721A00E24788 /* mupen64plus.ini in Resources */,
+				BF6E4E632261722900E24788 /* GLideN64.ini in Resources */,
+				BF6E4E642261722C00E24788 /* GLideN64.custom.ini in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3680,7 +3694,6 @@
 				BF2EFBBA224C1C0A0032AD78 /* Context.cpp in Sources */,
 				BF2EFC0F224C1C0A0032AD78 /* N64.cpp in Sources */,
 				BF2EFBC5224C1C0A0032AD78 /* opengl_ContextImpl.cpp in Sources */,
-				BF2EFBD0224C1C0A0032AD78 /* glsl_FXAA.cpp in Sources */,
 				BF2EFCF6224C317D0032AD78 /* pngrtran.c in Sources */,
 				BF2EFB89224C1C0A0032AD78 /* TxHiResCache.cpp in Sources */,
 				BF2EFBBF224C1C0A0032AD78 /* ColorBufferReader.cpp in Sources */,
@@ -3701,6 +3714,7 @@
 				BF2EFB18224C1C090032AD78 /* FrameBufferInfo.cpp in Sources */,
 				BF2EFA64224C1C080032AD78 /* ZSort.cpp in Sources */,
 				BF2EFA74224C1C080032AD78 /* L3D.cpp in Sources */,
+				BF21774422556BE400D74210 /* F5Rogue.cpp in Sources */,
 				BF2EFA61224C1C080032AD78 /* F3DEX2.cpp in Sources */,
 				BF2EFA81224C1C080032AD78 /* F3D.cpp in Sources */,
 				BF2EFBE5224C1C0A0032AD78 /* opengl_Utils.cpp in Sources */,
@@ -3708,6 +3722,7 @@
 				BF2EFA78224C1C080032AD78 /* F3DAM.cpp in Sources */,
 				BF2EFB3D224C1C090032AD78 /* DisplayWindow.cpp in Sources */,
 				BF2EFCF3224C317D0032AD78 /* pngmem.c in Sources */,
+				BF21774322556BD100D74210 /* glsl_FXAA.cpp in Sources */,
 				BF2EFB11224C1C090032AD78 /* PostProcessor.cpp in Sources */,
 				BF2EFB7E224C1C090032AD78 /* TxQuantize.cpp in Sources */,
 				BF2EFBC2224C1C0A0032AD78 /* mupen64plus_DisplayWindow.cpp in Sources */,
@@ -3731,9 +3746,9 @@
 				BF2EFBDE224C1C0A0032AD78 /* glsl_Utils.cpp in Sources */,
 				BF2EFC09224C1C0A0032AD78 /* MupenPlusPluginAPI.cpp in Sources */,
 				BF2EFA83224C1C080032AD78 /* L3DEX.cpp in Sources */,
+				BF21774522556BF800D74210 /* F5Indi_Naboo.cpp in Sources */,
 				BF2EFA68224C1C080032AD78 /* F3DPD.cpp in Sources */,
 				BF2EFB3E224C1C090032AD78 /* TextureFilterHandler.cpp in Sources */,
-				BF2EFB79224C1C090032AD78 /* TxDbg.cpp in Sources */,
 				BF2EFBCD224C1C0A0032AD78 /* opengl_BufferManipulationObjectFactory.cpp in Sources */,
 				BF2EFB17224C1C090032AD78 /* SoftwareRender.cpp in Sources */,
 				BF2EFBA3224C1C0A0032AD78 /* 3DMath.cpp in Sources */,
@@ -3749,7 +3764,6 @@
 				BF2EFB1E224C1C090032AD78 /* osal_files_ios.mm in Sources */,
 				BF2EFB67224C1C090032AD78 /* TextureFilters.cpp in Sources */,
 				BF2EFCEE224C317D0032AD78 /* pngwtran.c in Sources */,
-				BF2EFA89224C1C080032AD78 /* F5Indi_Naboo.cpp in Sources */,
 				BF2EFBE1224C1C0A0032AD78 /* opengl_TextureManipulationObjectFactory.cpp in Sources */,
 				BF2EFB12224C1C090032AD78 /* NoiseTexture.cpp in Sources */,
 				BF2EFB28224C1C090032AD78 /* CommonAPIImpl_mupenplus.cpp in Sources */,
@@ -3765,7 +3779,6 @@
 				BF2EFA90224C1C080032AD78 /* F3DEX.cpp in Sources */,
 				BF2EFB2B224C1C090032AD78 /* FrameBuffer.cpp in Sources */,
 				BF2EFC01224C1C0A0032AD78 /* ZlutTexture.cpp in Sources */,
-				BF2EFC4C224C23B00032AD78 /* MemoryStatus_mupenplus.cpp in Sources */,
 				BF2EFBD7224C1C0A0032AD78 /* glsl_CombinerInputs.cpp in Sources */,
 				BF2EFBF0224C1C0A0032AD78 /* opengl_UnbufferedDrawer.cpp in Sources */,
 				BF2EFA6E224C1C080032AD78 /* Turbo3D.cpp in Sources */,
@@ -3774,6 +3787,7 @@
 				BF2EFCE9224C317D0032AD78 /* pngtrans.c in Sources */,
 				BF2EFBCB224C1C0A0032AD78 /* opengl_Attributes.cpp in Sources */,
 				BF2EFAFE224C1C090032AD78 /* Textures.cpp in Sources */,
+				BF21773C22556B2300D74210 /* MemoryStatus_mupenplus.cpp in Sources */,
 				BF2EFA7D224C1C080032AD78 /* F3DSETA.cpp in Sources */,
 				BF2EFCF9224C31B70032AD78 /* png.c in Sources */,
 				BF2EFB39224C1C090032AD78 /* DepthBuffer.cpp in Sources */,
@@ -3781,6 +3795,7 @@
 				BF2EFB0A224C1C090032AD78 /* DepthBufferToRDRAM.cpp in Sources */,
 				BF2EFB7D224C1C090032AD78 /* txWidestringWrapper.cpp in Sources */,
 				BF2EFBA8224C1C0A0032AD78 /* xxhash.c in Sources */,
+				BF31A1F12267A81100C64A1B /* TxDbg_ios.mm in Sources */,
 				BF2EFBAA224C1C0A0032AD78 /* GraphicsDrawer.cpp in Sources */,
 				BF2EFA60224C1C080032AD78 /* F3DDKR.cpp in Sources */,
 				BF2EFB8C224C1C0A0032AD78 /* TxUtil.cpp in Sources */,
@@ -3808,7 +3823,6 @@
 				BF2EFBC3224C1C0A0032AD78 /* opengl_ColorBufferReaderWithBufferStorage.cpp in Sources */,
 				BF2EFBE2224C1C0A0032AD78 /* opengl_Parameters.cpp in Sources */,
 				BF2EFC0D224C1C0A0032AD78 /* CRC_OPT.cpp in Sources */,
-				BF2EFA84224C1C080032AD78 /* F5Rogue.cpp in Sources */,
 				BF2EFC0B224C1C0A0032AD78 /* gDP.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3817,8 +3831,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF21773022554FC900D74210 /* dd_controller.c in Sources */,
+				BF21773122554FDD00D74210 /* video_capture_backend.c in Sources */,
+				BF21773222554FED00D74210 /* biopak.c in Sources */,
 				BF2EFD02224C339E0032AD78 /* N64DeltaCore.m in Sources */,
-				BF2EFD00224C33830032AD78 /* N64.swift in Sources */,
+				BF2177332255506100D74210 /* dummy_video_capture.c in Sources */,
+				BFCB0FD722568D330056F983 /* N64.swift in Sources */,
 				BF2EFD0D224C39B10032AD78 /* N64EmulatorBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3952,6 +3970,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					MUPENPLUSAPI,
@@ -3969,7 +3988,7 @@
 				);
 				INFOPLIST_FILE = "N64DeltaCore-Video/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4018,7 +4037,7 @@
 				);
 				INFOPLIST_FILE = "N64DeltaCore-Video/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4192,11 +4211,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					GLES_SILENCE_DEPRECATION,
+				);
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
 					"\"$(SRCROOT)/libMupen64Plus/SDL\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
+					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src\"",
 				);
 				INFOPLIST_FILE = N64DeltaCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -4209,11 +4234,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
+					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src\"",
 				);
 			};
 			name = Debug;
@@ -4229,11 +4255,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = GLES_SILENCE_DEPRECATION;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
 					"\"$(SRCROOT)/libMupen64Plus/SDL\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
+					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src\"",
 				);
 				INFOPLIST_FILE = N64DeltaCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -4245,11 +4273,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.N64DeltaCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"",
+					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src\"",
 				);
 			};
 			name = Release;
@@ -4259,6 +4288,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XVY5G3U44;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
@@ -4326,10 +4356,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = 3;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"";
 				INFOPLIST_FILE = "N64DeltaCore-RSP/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4355,7 +4386,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"";
 				INFOPLIST_FILE = "N64DeltaCore-RSP/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

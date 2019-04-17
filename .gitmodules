@@ -1,9 +1,9 @@
 [submodule "Mupen64Plus/mupen64plus-core"]
 	path = Mupen64Plus/mupen64plus-core
-	url = https://github.com/mupen64plus/mupen64plus-core.git
+	url = https://github.com/rileytestut/mupen64plus-core.git
 [submodule "Mupen64Plus/GLideN64"]
 	path = Mupen64Plus/GLideN64
-	url = https://github.com/gonetz/GLideN64.git
+	url = https://github.com/rileytestut/GLideN64.git
 [submodule "Mupen64Plus/libpng"]
 	path = Mupen64Plus/libpng
 	url = git://git.code.sf.net/p/libpng/code
