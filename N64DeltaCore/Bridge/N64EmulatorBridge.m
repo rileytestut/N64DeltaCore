@@ -59,6 +59,8 @@
 @property (nonatomic, strong, readwrite) AVAudioFormat *preferredAudioFormat;
 @property (nonatomic, readwrite) CGSize preferredVideoDimensions;
 
+@property (nonatomic, strong) NSMutableSet *activeCheats;
+
 @end
 
 @implementation N64EmulatorBridge
@@ -209,6 +211,8 @@ static void MupenSetAudioSpeed(int percent)
         
         _preferredAudioFormat = [[AVAudioFormat alloc] initWithCommonFormat:AVAudioPCMFormatInt16 sampleRate:44100 channels:2 interleaved:YES];
         _preferredVideoDimensions = CGSizeMake(640, 480);
+        
+        _activeCheats = [NSMutableSet set];
     }
     
     return self;
@@ -358,7 +362,9 @@ static void MupenSetAudioSpeed(int percent)
     
     CoreDoCommand(M64CMD_ROM_CLOSE, 0, NULL);
     
-    self.running = NO;
+    [self.activeCheats removeAllObjects];
+    
+    self.running = NO;    
 }
 
 - (void)pause
@@ -487,11 +493,48 @@ static void MupenSetAudioSpeed(int percent)
 
 - (BOOL)addCheatCode:(NSString *)code type:(NSString *)type
 {
+    code = [code stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if (code.length != 12)
+    {
+        return NO;
+    }
+    
+    if ([self.activeCheats containsObject:code])
+    {
+        CoreCheatEnabled([code UTF8String], 1);
+        return YES;
+    }
+    
+    m64p_cheat_code *gsCode = (m64p_cheat_code *)calloc(1, sizeof(m64p_cheat_code));
+    
+    NSString *address = [code substringWithRange:NSMakeRange(0, 8)];
+    NSString *value = [code substringWithRange:NSMakeRange(8, 4)];
+    
+    unsigned int outAddress = 0;
+    [[NSScanner scannerWithString:address] scanHexInt:&outAddress];
+    
+    unsigned int outValue = 0;
+    [[NSScanner scannerWithString:value] scanHexInt:&outValue];
+    
+    gsCode->address = outAddress;
+    gsCode->value = outValue;
+    
+    if (CoreAddCheat([code UTF8String], gsCode, 1) != M64ERR_SUCCESS)
+    {
+        return NO;
+    }
+    
+    [self.activeCheats addObject:code];
+    
     return YES;
 }
 
 - (void)resetCheats
 {
+    for (NSString *code in self.activeCheats)
+    {
+        CoreCheatEnabled([code UTF8String], 0);
+    }
 }
 
 - (void)updateCheats
