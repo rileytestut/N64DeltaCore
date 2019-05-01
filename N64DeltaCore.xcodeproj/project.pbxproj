@@ -3982,6 +3982,7 @@
 					GLESX,
 					"PNG_ARM_NEON_OPT=0",
 				);
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src/\"",
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src/inc/\"",
@@ -4031,6 +4032,7 @@
 					GL_ERROR_DEBUG,
 					GL_DEBUG,
 				);
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src/\"",
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src/inc/\"",
@@ -4357,6 +4359,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"";
 				INFOPLIST_FILE = "N64DeltaCore-RSP/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -4383,6 +4386,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"";
 				INFOPLIST_FILE = "N64DeltaCore-RSP/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
