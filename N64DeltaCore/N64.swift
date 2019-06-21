@@ -30,11 +30,11 @@ public extension GameType
     case analogStickLeft = 6
     case analogStickRight = 7
     
-    // C-Stick
-    case cStickUp = 8
-    case cStickDown = 9
-    case cStickLeft = 10
-    case cStickRight = 11
+    // C-Buttons
+    case cUp = 8
+    case cDown = 9
+    case cLeft = 10
+    case cRight = 11
     
     // Other
     case a = 12
@@ -46,6 +46,14 @@ public extension GameType
     
     public var type: InputType {
         return .game(.n64)
+    }
+    
+    public var isContinuous: Bool {
+        switch self
+        {
+        case .analogStickUp, .analogStickDown, .analogStickLeft, .analogStickRight: return true
+        default: return false
+        }
     }
 }
 

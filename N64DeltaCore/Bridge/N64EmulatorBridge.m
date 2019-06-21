@@ -10,6 +10,7 @@
 #import <N64DeltaCore/N64DeltaCore-Swift.h>
 
 #define M64P_CORE_PROTOTYPES
+#define N64_ANALOG_MAX 80
 
 #include "api/config.h"
 #include "api/m64p_common.h"
@@ -36,6 +37,8 @@
 
 @interface N64EmulatorBridge ()
 {
+@public
+    double inputs[20];
 }
 
 @property (nonatomic, copy, nullable, readwrite) NSURL *gameURL;
@@ -98,10 +101,58 @@ static void *dlopen_N64DeltaCore()
 
 static void MupenGetKeys(int Control, BUTTONS *Keys)
 {
+    Keys->R_DPAD = N64EmulatorBridge.sharedBridge->inputs[N64GameInputRight];
+    Keys->L_DPAD = N64EmulatorBridge.sharedBridge->inputs[N64GameInputLeft];
+    Keys->D_DPAD = N64EmulatorBridge.sharedBridge->inputs[N64GameInputDown];
+    Keys->U_DPAD = N64EmulatorBridge.sharedBridge->inputs[N64GameInputUp];
+    Keys->START_BUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputStart];
+    Keys->Z_TRIG = N64EmulatorBridge.sharedBridge->inputs[N64GameInputZ];
+    Keys->B_BUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputB];
+    Keys->A_BUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputA];
+    Keys->R_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputCRight];
+    Keys->L_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputCLeft];
+    Keys->D_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputCDown];
+    Keys->U_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputCUp];
+    Keys->R_TRIG = N64EmulatorBridge.sharedBridge->inputs[N64GameInputR];
+    Keys->L_TRIG = N64EmulatorBridge.sharedBridge->inputs[N64GameInputL];
+    
+    if (N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickLeft])
+    {
+        Keys->X_AXIS = N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickLeft] * -N64_ANALOG_MAX;
+    }
+    else if (N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickRight])
+    {
+        Keys->X_AXIS = N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickRight] * N64_ANALOG_MAX;
+    }
+    else
+    {
+        Keys->X_AXIS = 0.0;
+    }
+    
+    if (N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickUp])
+    {
+        Keys->Y_AXIS = N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickUp] * N64_ANALOG_MAX;
+    }
+    else if (N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickDown])
+    {
+        Keys->Y_AXIS = N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickDown] * -N64_ANALOG_MAX;
+    }
+    else
+    {
+        Keys->Y_AXIS = 0.0;
+    }
 }
 
 static void MupenInitiateControllers (CONTROL_INFO ControlInfo)
 {
+    ControlInfo.Controls[0].Present = 1;
+    ControlInfo.Controls[0].Plugin = PLUGIN_RAW;
+    ControlInfo.Controls[1].Present = 0;
+    ControlInfo.Controls[1].Plugin = PLUGIN_MEMPAK;
+    ControlInfo.Controls[2].Present = 0;
+    ControlInfo.Controls[2].Plugin = PLUGIN_MEMPAK;
+    ControlInfo.Controls[3].Present = 0;
+    ControlInfo.Controls[3].Plugin = PLUGIN_MEMPAK;
 }
 
 static void MupenControllerCommand(int Control, unsigned char *Command)
@@ -324,12 +375,16 @@ static void MupenSetAudioSpeed(int percent)
     input.initiateControllers = MupenInitiateControllers;
     input.controllerCommand = MupenControllerCommand;
     plugin_start(M64PLUGIN_INPUT);
-    
+        
     if (![self didLoadPlugins])
     {
         /* Prepare Plugins */
-        NSAssert([self loadPlugin:@"N64DeltaCore_Video" type:M64PLUGIN_GFX], @"Failed to load video plugin.");
-        NSAssert([self loadPlugin:@"N64DeltaCore_RSP" type:M64PLUGIN_RSP], @"Failed to load RSP plugin.");
+        
+        BOOL didLoadVideoPlugin = [self loadPlugin:@"N64DeltaCore_Video" type:M64PLUGIN_GFX];
+        NSAssert(didLoadVideoPlugin, @"Failed to load video plugin.");
+        
+        BOOL didLoadRSPPlugin = [self loadPlugin:@"N64DeltaCore_RSP" type:M64PLUGIN_RSP];
+        NSAssert(didLoadRSPPlugin, @"Failed to load RSP plugin.");
         
         self.didLoadPlugins = YES;
     }
@@ -390,14 +445,25 @@ static void MupenSetAudioSpeed(int percent)
 
 - (void)activateInput:(NSInteger)input
 {
+    inputs[input] = 1;
+}
+
+- (void)activateInput:(NSInteger)input value:(double)value
+{
+    inputs[input] = value;
 }
 
 - (void)deactivateInput:(NSInteger)input
 {
+    inputs[input] = 0;
 }
 
 - (void)resetInputs
 {
+    for (NSInteger input = 0; input < 18; input++)
+    {
+        [self deactivateInput:input];
+    }
 }
 
 #pragma mark - Save States -

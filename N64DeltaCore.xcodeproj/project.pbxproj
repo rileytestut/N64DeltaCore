@@ -515,6 +515,8 @@
 		BF79965D224BFF6C009B094F /* sdl_key_converter.c in Sources */ = {isa = PBXBuildFile; fileRef = BF7995EC224BFF6C009B094F /* sdl_key_converter.c */; };
 		BF799668224C0598009B094F /* SDLStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = BF799664224C0598009B094F /* SDLStubs.m */; };
 		BF799678224C09A1009B094F /* N64DeltaCore_RSP.h in Headers */ = {isa = PBXBuildFile; fileRef = BF799676224C09A1009B094F /* N64DeltaCore_RSP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF9B5980227A52CE0011C8B4 /* Standard.deltamapping in Resources */ = {isa = PBXBuildFile; fileRef = BF9B597F227A52CD0011C8B4 /* Standard.deltamapping */; };
+		BF9B5982227A52D40011C8B4 /* Standard.deltaskin in Resources */ = {isa = PBXBuildFile; fileRef = BF9B5981227A52D40011C8B4 /* Standard.deltaskin */; };
 		BFCB0FD722568D330056F983 /* N64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCFF224C33830032AD78 /* N64.swift */; };
 /* End PBXBuildFile section */
 
@@ -1399,6 +1401,8 @@
 		BF799674224C09A1009B094F /* N64DeltaCore_RSP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = N64DeltaCore_RSP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF799676224C09A1009B094F /* N64DeltaCore_RSP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64DeltaCore_RSP.h; sourceTree = "<group>"; };
 		BF799677224C09A1009B094F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF9B597F227A52CD0011C8B4 /* Standard.deltamapping */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Standard.deltamapping; sourceTree = "<group>"; };
+		BF9B5981227A52D40011C8B4 /* Standard.deltaskin */ = {isa = PBXFileReference; lastKnownFileType = file; name = Standard.deltaskin; path = "Controller Skin/Standard.deltaskin"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2480,7 +2484,7 @@
 				BF2EFD01224C339D0032AD78 /* N64DeltaCore.m */,
 				BF2EFCFF224C33830032AD78 /* N64.swift */,
 				BF2EFD03224C36F00032AD78 /* Bridge */,
-				BF799018224BF59E009B094F /* Info.plist */,
+				BF9B597E227A529C0011C8B4 /* Supporting Files */,
 			);
 			path = N64DeltaCore;
 			sourceTree = "<group>";
@@ -3210,6 +3214,16 @@
 			path = "N64DeltaCore-RSP";
 			sourceTree = "<group>";
 		};
+		BF9B597E227A529C0011C8B4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF799018224BF59E009B094F /* Info.plist */,
+				BF9B5981227A52D40011C8B4 /* Standard.deltaskin */,
+				BF9B597F227A52CD0011C8B4 /* Standard.deltamapping */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -3645,6 +3659,8 @@
 			files = (
 				BF6E4E622261721A00E24788 /* mupen64plus.ini in Resources */,
 				BF6E4E632261722900E24788 /* GLideN64.ini in Resources */,
+				BF9B5980227A52CE0011C8B4 /* Standard.deltamapping in Resources */,
+				BF9B5982227A52D40011C8B4 /* Standard.deltaskin in Resources */,
 				BF6E4E642261722C00E24788 /* GLideN64.custom.ini in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
