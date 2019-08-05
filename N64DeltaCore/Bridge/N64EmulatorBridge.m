@@ -434,7 +434,7 @@ static void MupenSetAudioSpeed(int percent)
 
 #pragma mark - Game Loop -
 
-- (void)runFrame
+- (void)runFrameAndProcessVideo:(BOOL)processVideo
 {
     dispatch_semaphore_signal(self.beginFrameSemaphore);
     
@@ -480,7 +480,7 @@ static void MupenSetAudioSpeed(int percent)
     
     if (![self isRunning])
     {
-        [self runFrame];
+        [self runFrameAndProcessVideo:YES];
     }
     
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
@@ -498,7 +498,7 @@ static void MupenSetAudioSpeed(int percent)
     
     if (![self isRunning])
     {
-        [self runFrame];
+        [self runFrameAndProcessVideo:YES];
     }
     
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
