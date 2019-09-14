@@ -652,7 +652,7 @@
                 "right": "analogStickRight"
               },
               "frame": {
-                "x": 34,
+                "x": 49,
                 "y": 103,
                 "width": 86,
                 "height": 86
@@ -660,7 +660,7 @@
               "extendedEdges": {
                 "top": 30,
                 "bottom": 30,
-                "left": 34,
+                "left": 49,
                 "right": 30
               }
             },
@@ -672,10 +672,13 @@
                 "right": "right"
               },
               "frame": {
-                "x": 15,
+                "x": 30,
                 "y": 237,
                 "width": 123,
                 "height": 123
+              },
+              "extendedEdges": {
+                "left": 30
               }
             },
             {
@@ -683,10 +686,13 @@
                 "a"
               ],
               "frame": {
-                "x": 742,
+                "x": 727,
                 "y": 158,
                 "width": 56,
                 "height": 56
+              },
+              "extendedEdges": {
+                "right": 30
               }
             },
             {
@@ -694,7 +700,7 @@
                 "b"
               ],
               "frame": {
-                "x": 667,
+                "x": 652,
                 "y": 134,
                 "width": 56,
                 "height": 56
@@ -705,10 +711,13 @@
                 "z"
               ],
               "frame": {
-                "x": 725,
+                "x": 710,
                 "y": 86,
                 "width": 56,
                 "height": 56
+              },
+              "extendedEdges": {
+                "right": 46
               }
             },
             {
@@ -760,7 +769,7 @@
                 "cUp"
               ],
               "frame": {
-                "x": 720,
+                "x": 705,
                 "y": 246,
                 "width": 40,
                 "height": 40
@@ -776,7 +785,7 @@
                 "cDown"
               ],
               "frame": {
-                "x": 720,
+                "x": 705,
                 "y": 320,
                 "width": 40,
                 "height": 40
@@ -792,7 +801,7 @@
                 "cLeft"
               ],
               "frame": {
-                "x": 683,
+                "x": 668,
                 "y": 283,
                 "width": 40,
                 "height": 40
@@ -808,7 +817,7 @@
                 "cRight"
               ],
               "frame": {
-                "x": 757,
+                "x": 742,
                 "y": 283,
                 "width": 40,
                 "height": 40
@@ -816,7 +825,8 @@
               "extendedEdges": {
                 "top": 0,
                 "bottom": 0,
-                "left": 0
+                "left": 0,
+                "right": 30
               }
             }
           ],
