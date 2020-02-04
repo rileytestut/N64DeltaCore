@@ -9,14 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
-#import <DeltaCore/DeltaCore-Swift.h>
+@protocol DLTAEmulatorBridging;
 
 NS_ASSUME_NONNULL_BEGIN
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything" // Silence "Cannot find protocol definition" warning due to forward declaration.
 __attribute__((visibility("default")))
 @interface N64EmulatorBridge : NSObject <DLTAEmulatorBridging>
-{
-}
+#pragma clang diagnostic pop
 
 @property (class, nonatomic, readonly) N64EmulatorBridge *sharedBridge;
 

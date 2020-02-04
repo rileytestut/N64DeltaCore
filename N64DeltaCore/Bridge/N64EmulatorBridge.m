@@ -7,12 +7,14 @@
 //
 
 #import "N64EmulatorBridge.h"
-#import <N64DeltaCore/N64DeltaCore-Swift.h>
+
+#import <DeltaCore/DeltaCore-Swift.h>
+#import "N64DeltaCore-Swift.h"
+#import "N64Types.h"
 
 #define M64P_CORE_PROTOTYPES
 #define N64_ANALOG_MAX 80
 
-#include "api/config.h"
 #include "api/m64p_common.h"
 #include "api/m64p_config.h"
 #include "api/m64p_frontend.h"
@@ -33,9 +35,7 @@
 #import <dlfcn.h>
 #import <mach-o/ldsyms.h>
 
-@import Darwin;
-
-@interface N64EmulatorBridge ()
+@interface N64EmulatorBridge () <DLTAEmulatorBridging>
 {
 @public
     double inputs[20];
@@ -63,6 +63,7 @@
 @property (nonatomic, readwrite) CGSize preferredVideoDimensions;
 
 @property (nonatomic, strong) NSMutableSet *activeCheats;
+@property (nonatomic) m64p_plugin_type activePluginType;
 
 @end
 
@@ -94,9 +95,9 @@ static void *dlopen_N64DeltaCore()
 {
     Dl_info info;
     
-    dladdr(dlopen_N64DeltaCore, &info);
+    dladdr((void *)dlopen_N64DeltaCore, &info);
     
-    return dlopen(info.dli_fname, RTLD_LAZY | RTLD_GLOBAL);
+    return dlopen(info.dli_fname, RTLD_LAZY | RTLD_NOLOAD);
 }
 
 static void MupenGetKeys(int Control, BUTTONS *Keys)
@@ -279,7 +280,7 @@ static void MupenSetAudioSpeed(int percent)
     NSArray<NSString *> *iniFiles = @[@"GLideN64", @"GLideN64.custom", @"mupen64plus"];
     for (NSString *filename in iniFiles)
     {
-        NSURL *sourceURL = [[NSBundle bundleForClass:self.class] URLForResource:filename withExtension:@"ini"];
+        NSURL *sourceURL = [NSBundle.n64Resources URLForResource:filename withExtension:@"ini"];
         NSURL *destinationURL = [[self.n64DirectoryURL URLByAppendingPathComponent:filename] URLByAppendingPathExtension:@"ini"];
         
         if ([[NSFileManager defaultManager] fileExistsAtPath:destinationURL.path isDirectory:nil])
@@ -623,22 +624,32 @@ static void MupenSetAudioSpeed(int percent)
 
 - (BOOL)loadPlugin:(NSString *)pluginName type:(m64p_plugin_type)type
 {
+    self.activePluginType = type;
+    
     m64p_dynlib_handle n64DeltaCoreHandle = dlopen_N64DeltaCore();
     
+#if STATIC_LIBRARY
+    m64p_dynlib_handle pluginHandle = n64DeltaCoreHandle;
+    ptr_PluginStartup pluginStart = (ptr_PluginStartup)osal_dynlib_getproc(pluginHandle, "PluginStartup");
+#else
     NSString *frameworkPath = [NSString stringWithFormat:@"%@.framework/%@", pluginName, pluginName];
     NSString *pluginPath = [[[NSBundle mainBundle] privateFrameworksPath] stringByAppendingPathComponent:frameworkPath];
     
     m64p_dynlib_handle pluginHandle = dlopen([pluginPath fileSystemRepresentation], RTLD_LAZY | RTLD_LOCAL);
-    
     ptr_PluginStartup pluginStart = dlsym(pluginHandle, "PluginStartup");
+#endif
+    
     m64p_error error = pluginStart(n64DeltaCoreHandle, (__bridge void *)self, MupenDebugCallback);
     if (error != M64ERR_SUCCESS)
     {
         NSLog(@"Error code %@ loading plugin of type %@, name: %@", @(error), @(type), pluginName);
+        self.activePluginType = M64PLUGIN_NULL;
         return NO;
     }
     
     error = CoreAttachPlugin(type, pluginHandle);
+    self.activePluginType = M64PLUGIN_NULL;
+    
     if (error != M64ERR_SUCCESS)
     {
         NSLog(@"Error code %@ attaching plugin of type %@, name: %@", @(error), @(type), pluginName);
@@ -704,6 +715,86 @@ static void MupenSetAudioSpeed(int percent)
 
 #pragma mark - Mupen64Plus Callbacks -
 
+EXPORT m64p_error CALL osal_dynlib_open(m64p_dynlib_handle *pLibHandle, const char *pccLibraryPath)
+{
+    if (pLibHandle == NULL || pccLibraryPath == NULL)
+    {
+        return M64ERR_INPUT_ASSERT;
+    }
+
+    *pLibHandle = dlopen(pccLibraryPath, RTLD_NOW);
+
+    if (*pLibHandle == NULL)
+    {
+        return M64ERR_INPUT_NOT_FOUND;
+    }
+
+    return M64ERR_SUCCESS;
+}
+
+EXPORT m64p_function CALL osal_dynlib_getproc(m64p_dynlib_handle LibHandle, const char *pccProcedureName)
+{
+    if (pccProcedureName == NULL)
+    {
+        return NULL;
+    }
+
+#if STATIC_LIBRARY
+    const char *getVersion = "PluginGetVersion";
+    const char *romOpen = "RomOpen";
+    const char *romClosed = "RomClosed";
+    const char *pluginStartup = "PluginStartup";
+    const char *pluginShutdown = "PluginShutdown";
+
+    if (strncmp(pccProcedureName, getVersion, strlen(getVersion)) == 0 ||
+        strncmp(pccProcedureName, pluginStartup, strlen(pluginStartup)) == 0 ||
+        strncmp(pccProcedureName, pluginShutdown, strlen(pluginShutdown)) == 0 ||
+        strncmp(pccProcedureName, romOpen, strlen(romOpen)) == 0 ||
+        strncmp(pccProcedureName, romClosed, strlen(romClosed)) == 0)
+    {
+        const char *prefix = "";
+                
+        switch (N64EmulatorBridge.sharedBridge.activePluginType)
+        {
+            case M64PLUGIN_GFX:
+                prefix = "Video_";
+                break;
+                
+            case M64PLUGIN_RSP:
+                prefix = "RSP_";
+                break;
+                
+            default:
+                break;
+        }
+        
+        char prefixedName[64];
+        prefixedName[0] = '\0';
+        
+        strcat(prefixedName, prefix);
+        strcat(prefixedName, pccProcedureName);
+        
+        m64p_function address = (m64p_function)dlsym(LibHandle, prefixedName);
+        return address;
+    }
+#endif
+
+    m64p_function address = (m64p_function)dlsym(LibHandle, pccProcedureName);
+    return address;
+}
+
+EXPORT m64p_error CALL osal_dynlib_close(m64p_dynlib_handle LibHandle)
+{
+    int result = dlclose(LibHandle);
+    if (result != 0)
+    {
+        return M64ERR_INTERNAL;
+    }
+
+    return M64ERR_SUCCESS;
+}
+
+
 EXPORT m64p_error CALL VidExt_Init(void)
 {
     return M64ERR_SUCCESS;
@@ -739,7 +830,7 @@ EXPORT m64p_error CALL VidExt_ToggleFullScreen(void)
 
 EXPORT m64p_function CALL VidExt_GL_GetProcAddress(const char* Proc)
 {
-    return dlsym(RTLD_NEXT, Proc);
+    return (m64p_function)dlsym(RTLD_NEXT, Proc);
 }
 
 EXPORT m64p_error CALL VidExt_GL_SetAttribute(m64p_GLattr Attr, int Value)
@@ -759,7 +850,7 @@ EXPORT m64p_error CALL VidExt_GL_SwapBuffers(void)
     return M64ERR_SUCCESS;
 }
 
-m64p_error OverrideVideoFunctions(m64p_video_extension_functions *VideoFunctionStruct)
+EXPORT m64p_error OverrideVideoFunctions(m64p_video_extension_functions *VideoFunctionStruct)
 {
     return M64ERR_SUCCESS;
 }
@@ -769,17 +860,17 @@ EXPORT m64p_error CALL VidExt_ResizeWindow(int width, int height)
     return M64ERR_SUCCESS;
 }
 
-int VidExt_InFullscreenMode(void)
+EXPORT int VidExt_InFullscreenMode(void)
 {
     return 1;
 }
 
-int VidExt_VideoRunning(void)
+EXPORT int VidExt_VideoRunning(void)
 {
     return N64EmulatorBridge.sharedBridge.isRunning;
 }
 
-void new_vi(void)
+EXPORT void new_vi(void)
 {
     struct r4300_core* r4300 = &g_dev.r4300;
     
@@ -800,43 +891,41 @@ void new_vi(void)
     [N64EmulatorBridge.sharedBridge videoInterrupt];
 }
 
-void ScreenshotRomOpen(void)
+EXPORT void ScreenshotRomOpen(void)
 {
 }
 
-void TakeScreenshot(int iFrameNumber)
+EXPORT void TakeScreenshot(int iFrameNumber)
 {
 }
 
-void osd_message_set_corner(osd_message_t *, enum osd_corner);
-
-osd_message_t * osd_message_valid(osd_message_t *m)
+EXPORT osd_message_t * osd_message_valid(osd_message_t *m)
 {
     return NULL;
 }
 
-int event_set_core_defaults(void)
+EXPORT int event_set_core_defaults(void)
 {
     return 1;
 }
 
-void event_initialize(void)
+EXPORT void event_initialize(void)
 {
 }
 
-void event_sdl_keydown(int keysym, int keymod)
+EXPORT void event_sdl_keydown(int keysym, int keymod)
 {
 }
 
-void event_sdl_keyup(int keysym, int keymod)
+EXPORT void event_sdl_keyup(int keysym, int keymod)
 {
 }
 
-int event_gameshark_active(void)
+EXPORT int event_gameshark_active(void)
 {
     return 1;
 }
 
-void event_set_gameshark(int active)
+EXPORT void event_set_gameshark(int active)
 {
 }

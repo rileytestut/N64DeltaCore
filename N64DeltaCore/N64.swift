@@ -11,11 +11,6 @@ import AVFoundation
 
 import DeltaCore
 
-public extension GameType
-{
-    static let n64 = GameType("com.rileytestut.delta.game.n64")
-}
-
 @objc public enum N64GameInput: Int, Input
 {
     // D-Pad
@@ -61,29 +56,33 @@ public struct N64: DeltaCoreProtocol
 {
     public static let core = N64()
     
-    public let gameType = GameType.n64
+    public var name: String { "N64DeltaCore" }
+    public var identifier: String { "com.rileytestut.N64DeltaCore" }
     
-    public let gameInputType: Input.Type = N64GameInput.self
+    public var gameType: GameType { GameType.n64 }
+    public var gameInputType: Input.Type { N64GameInput.self }
+    public var gameSaveFileExtension: String { "sav" }
     
-    public let gameSaveFileExtension = "sav"
+    public var audioFormat: AVAudioFormat { N64EmulatorBridge.shared.preferredAudioFormat }
+    public var videoFormat: VideoFormat { VideoFormat(format: .openGLES, dimensions: N64EmulatorBridge.shared.preferredVideoDimensions) }
     
-    public var audioFormat: AVAudioFormat {
-        return N64EmulatorBridge.shared.preferredAudioFormat
-    }
-    
-    public var videoFormat: VideoFormat {
-        return VideoFormat(format: .openGLES, dimensions: N64EmulatorBridge.shared.preferredVideoDimensions)
-    }
-    
-    public let supportedCheatFormats: Set<CheatFormat> = {
+    public var supportedCheatFormats: Set<CheatFormat> {
         let gameSharkFormat = CheatFormat(name: NSLocalizedString("GameShark", comment: ""), format: "XXXXXXXX YYYY", type: .gameShark)
         return [gameSharkFormat]
-    }()
+    }
     
-    public let emulatorBridge: EmulatorBridging = N64EmulatorBridge.shared
+    public var emulatorBridge: EmulatorBridging { N64EmulatorBridge.shared }
     
     private init()
     {
+    }
+}
+
+extension Bundle
+{
+    // Expose resource bundle to Objective-C.
+    @objc(n64Resources) public class var __n64Resources: Bundle {
+        return N64.core.resourceBundle
     }
 }
 

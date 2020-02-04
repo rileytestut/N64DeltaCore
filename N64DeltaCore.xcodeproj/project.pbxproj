@@ -438,7 +438,7 @@
 		BF2EFCF8224C317D0032AD78 /* pngset.c in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCE2224C317D0032AD78 /* pngset.c */; };
 		BF2EFCF9224C31B70032AD78 /* png.c in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCDF224C317D0032AD78 /* png.c */; };
 		BF2EFCFE224C32EA0032AD78 /* TextDrawerStub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF9C8224C1C080032AD78 /* TextDrawerStub.cpp */; };
-		BF2EFD02224C339E0032AD78 /* N64DeltaCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFD01224C339D0032AD78 /* N64DeltaCore.m */; };
+		BF2EFD02224C339E0032AD78 /* N64Types.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFD01224C339D0032AD78 /* N64Types.m */; };
 		BF2EFD0C224C39AD0032AD78 /* N64EmulatorBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EFD04224C370C0032AD78 /* N64EmulatorBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF2EFD0D224C39B10032AD78 /* N64EmulatorBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFD05224C370C0032AD78 /* N64EmulatorBridge.m */; };
 		BF31A1F12267A81100C64A1B /* TxDbg_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF31A1F02267A81000C64A1B /* TxDbg_ios.mm */; };
@@ -457,13 +457,11 @@
 		BF7995FD224BFF6C009B094F /* input_plugin_compat.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799501224BFF6C009B094F /* input_plugin_compat.c */; };
 		BF799600224BFF6C009B094F /* file_storage.c in Sources */ = {isa = PBXBuildFile; fileRef = BF79950E224BFF6C009B094F /* file_storage.c */; };
 		BF799603224BFF6C009B094F /* files_macos.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799513224BFF6C009B094F /* files_macos.c */; };
-		BF799605224BFF6C009B094F /* dynamiclib_unix.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799516224BFF6C009B094F /* dynamiclib_unix.c */; };
 		BF799608224BFF6C009B094F /* dummy_audio.c in Sources */ = {isa = PBXBuildFile; fileRef = BF79951C224BFF6C009B094F /* dummy_audio.c */; };
 		BF799609224BFF6C009B094F /* dummy_input.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799520224BFF6C009B094F /* dummy_input.c */; };
 		BF79960A224BFF6C009B094F /* plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799522224BFF6C009B094F /* plugin.c */; };
 		BF79960B224BFF6C009B094F /* dummy_video.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799523224BFF6C009B094F /* dummy_video.c */; };
 		BF79960C224BFF6C009B094F /* dummy_rsp.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799524224BFF6C009B094F /* dummy_rsp.c */; };
-		BF799612224BFF6C009B094F /* common.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799532224BFF6C009B094F /* common.c */; };
 		BF799613224BFF6C009B094F /* frontend.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799533224BFF6C009B094F /* frontend.c */; };
 		BF799614224BFF6C009B094F /* debugger.c in Sources */ = {isa = PBXBuildFile; fileRef = BF79953A224BFF6C009B094F /* debugger.c */; };
 		BF799615224BFF6C009B094F /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = BF79953E224BFF6C009B094F /* config.c */; };
@@ -518,6 +516,8 @@
 		BF9B5980227A52CE0011C8B4 /* Standard.deltamapping in Resources */ = {isa = PBXBuildFile; fileRef = BF9B597F227A52CD0011C8B4 /* Standard.deltamapping */; };
 		BF9B5982227A52D40011C8B4 /* Standard.deltaskin in Resources */ = {isa = PBXBuildFile; fileRef = BF9B5981227A52D40011C8B4 /* Standard.deltaskin */; };
 		BFCB0FD722568D330056F983 /* N64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2EFCFF224C33830032AD78 /* N64.swift */; };
+		BFFDF04223E3CAC800931B96 /* N64Types.h in Headers */ = {isa = PBXBuildFile; fileRef = BFFDF04023E3CAC800931B96 /* N64Types.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFFDF04B23E3E56000931B96 /* common.c in Sources */ = {isa = PBXBuildFile; fileRef = BF799532224BFF6C009B094F /* common.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -591,6 +591,8 @@
 		BF0D5289224D63DB0096DF50 /* mp3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mp3.c; sourceTree = "<group>"; };
 		BF0D528A224D63DB0096DF50 /* ucodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucodes.h; sourceTree = "<group>"; };
 		BF0D528B224D63DB0096DF50 /* audio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audio.c; sourceTree = "<group>"; };
+		BF0F902F23E603DF0094BF82 /* plugin_delta.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = plugin_delta.c; sourceTree = "<group>"; };
+		BF0F903123E606680094BF82 /* plugin_delta.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = plugin_delta.cpp; sourceTree = "<group>"; };
 		BF21773D22556B6E00D74210 /* TxDbg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TxDbg.h; sourceTree = "<group>"; };
 		BF21773E22556B7000D74210 /* TxDbg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TxDbg.cpp; sourceTree = "<group>"; };
 		BF21774122556B8B00D74210 /* TxDbg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TxDbg.cpp; sourceTree = "<group>"; };
@@ -1108,7 +1110,7 @@
 		BF2EFCE1224C317D0032AD78 /* pngrutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pngrutil.c; sourceTree = "<group>"; };
 		BF2EFCE2224C317D0032AD78 /* pngset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pngset.c; sourceTree = "<group>"; };
 		BF2EFCFF224C33830032AD78 /* N64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N64.swift; sourceTree = "<group>"; };
-		BF2EFD01224C339D0032AD78 /* N64DeltaCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = N64DeltaCore.m; sourceTree = "<group>"; };
+		BF2EFD01224C339D0032AD78 /* N64Types.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = N64Types.m; sourceTree = "<group>"; };
 		BF2EFD04224C370C0032AD78 /* N64EmulatorBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64EmulatorBridge.h; sourceTree = "<group>"; };
 		BF2EFD05224C370C0032AD78 /* N64EmulatorBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = N64EmulatorBridge.m; sourceTree = "<group>"; };
 		BF31A1F02267A81000C64A1B /* TxDbg_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TxDbg_ios.mm; sourceTree = "<group>"; };
@@ -1403,6 +1405,7 @@
 		BF799677224C09A1009B094F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF9B597F227A52CD0011C8B4 /* Standard.deltamapping */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Standard.deltamapping; sourceTree = "<group>"; };
 		BF9B5981227A52D40011C8B4 /* Standard.deltaskin */ = {isa = PBXFileReference; lastKnownFileType = file; name = Standard.deltaskin; path = "Controller Skin/Standard.deltaskin"; sourceTree = "<group>"; };
+		BFFDF04023E3CAC800931B96 /* N64Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64Types.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1518,6 +1521,7 @@
 			isa = PBXGroup;
 			children = (
 				BF2EF80F224C1BF60032AD78 /* N64DeltaCore_Video.h */,
+				BF0F903123E606680094BF82 /* plugin_delta.cpp */,
 				BF31A1F02267A81000C64A1B /* TxDbg_ios.mm */,
 				BF2EF810224C1BF60032AD78 /* Info.plist */,
 				BF2EF815224C1C070032AD78 /* GLideN64 */,
@@ -2457,12 +2461,12 @@
 		BF79900A224BF59E009B094F = {
 			isa = PBXGroup;
 			children = (
-				BF799016224BF59E009B094F /* N64DeltaCore */,
+				BF7994A5224BFDCF009B094F /* Frameworks */,
 				BF79949B224BFDAA009B094F /* libMupen64Plus */,
+				BF799016224BF59E009B094F /* N64DeltaCore */,
 				BF799675224C09A1009B094F /* N64DeltaCore-RSP */,
 				BF2EF80E224C1BF60032AD78 /* N64DeltaCore-Video */,
 				BF799015224BF59E009B094F /* Products */,
-				BF7994A5224BFDCF009B094F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2481,9 +2485,9 @@
 			isa = PBXGroup;
 			children = (
 				BF799017224BF59E009B094F /* N64DeltaCore.h */,
-				BF2EFD01224C339D0032AD78 /* N64DeltaCore.m */,
 				BF2EFCFF224C33830032AD78 /* N64.swift */,
 				BF2EFD03224C36F00032AD78 /* Bridge */,
+				BFFDF04423E3CB3300931B96 /* Types */,
 				BF9B597E227A529C0011C8B4 /* Supporting Files */,
 			);
 			path = N64DeltaCore;
@@ -3208,6 +3212,7 @@
 			isa = PBXGroup;
 			children = (
 				BF799676224C09A1009B094F /* N64DeltaCore_RSP.h */,
+				BF0F902F23E603DF0094BF82 /* plugin_delta.c */,
 				BF799677224C09A1009B094F /* Info.plist */,
 				BF0D5265224D63DB0096DF50 /* mupen64plus-rsp-hle */,
 			);
@@ -3222,6 +3227,15 @@
 				BF9B597F227A52CD0011C8B4 /* Standard.deltamapping */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BFFDF04423E3CB3300931B96 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				BFFDF04023E3CAC800931B96 /* N64Types.h */,
+				BF2EFD01224C339D0032AD78 /* N64Types.m */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3501,6 +3515,7 @@
 			files = (
 				BF799019224BF59E009B094F /* N64DeltaCore.h in Headers */,
 				BF2EFD0C224C39AD0032AD78 /* N64EmulatorBridge.h in Headers */,
+				BFFDF04223E3CAC800931B96 /* N64Types.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3850,7 +3865,7 @@
 				BF21773022554FC900D74210 /* dd_controller.c in Sources */,
 				BF21773122554FDD00D74210 /* video_capture_backend.c in Sources */,
 				BF21773222554FED00D74210 /* biopak.c in Sources */,
-				BF2EFD02224C339E0032AD78 /* N64DeltaCore.m in Sources */,
+				BF2EFD02224C339E0032AD78 /* N64Types.m in Sources */,
 				BF2177332255506100D74210 /* dummy_video_capture.c in Sources */,
 				BFCB0FD722568D330056F983 /* N64.swift in Sources */,
 				BF2EFD0D224C39B10032AD78 /* N64EmulatorBridge.m in Sources */,
@@ -3895,10 +3910,8 @@
 				BF799622224BFF6C009B094F /* pif.c in Sources */,
 				BF799621224BFF6C009B094F /* n64_cic_nus_6105.c in Sources */,
 				BF7995FD224BFF6C009B094F /* input_plugin_compat.c in Sources */,
-				BF799605224BFF6C009B094F /* dynamiclib_unix.c in Sources */,
 				BF799651224BFF6C009B094F /* mempak.c in Sources */,
 				BF799629224BFF6C009B094F /* r4300_core.c in Sources */,
-				BF799612224BFF6C009B094F /* common.c in Sources */,
 				BF799652224BFF6C009B094F /* game_controller.c in Sources */,
 				BF799647224BFF6C009B094F /* sram.c in Sources */,
 				BF799608224BFF6C009B094F /* dummy_audio.c in Sources */,
@@ -3928,6 +3941,7 @@
 				BF799624224BFF6C009B094F /* memory.c in Sources */,
 				BF799615224BFF6C009B094F /* config.c in Sources */,
 				BF79961D224BFF6C009B094F /* si_controller.c in Sources */,
+				BFFDF04B23E3E56000931B96 /* common.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3977,7 +3991,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -4005,7 +4019,6 @@
 				);
 				INFOPLIST_FILE = "N64DeltaCore-Video/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4032,7 +4045,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -4058,7 +4071,6 @@
 				);
 				INFOPLIST_FILE = "N64DeltaCore-Video/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4307,6 +4319,7 @@
 		BF7994A0224BFDAA009B094F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XVY5G3U44;
 				GCC_OPTIMIZATION_LEVEL = 3;
@@ -4316,7 +4329,6 @@
 					"\"$(SRCROOT)/libMupen64Plus/SDL\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DM64P_PARALLEL=1",
@@ -4339,6 +4351,7 @@
 		BF7994A1224BFDAA009B094F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XVY5G3U44;
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
@@ -4347,7 +4360,6 @@
 					"\"$(SRCROOT)/libMupen64Plus/SDL\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/subprojects\"/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DM64P_PARALLEL=1",
@@ -4382,7 +4394,6 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"";
 				INFOPLIST_FILE = "N64DeltaCore-RSP/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4409,7 +4420,6 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src/api\"";
 				INFOPLIST_FILE = "N64DeltaCore-RSP/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
