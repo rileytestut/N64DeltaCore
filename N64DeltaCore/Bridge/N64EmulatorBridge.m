@@ -558,40 +558,48 @@ static void MupenSetAudioSpeed(int percent)
 
 #pragma mark - Cheats -
 
-- (BOOL)addCheatCode:(NSString *)code type:(NSString *)type
+- (BOOL)addCheatCode:(NSString *)cheatCode type:(NSString *)type
 {
-    code = [code stringByReplacingOccurrencesOfString:@" " withString:@""];
-    if (code.length != 12)
+    if ([self.activeCheats containsObject:cheatCode])
     {
-        return NO;
-    }
-    
-    if ([self.activeCheats containsObject:code])
-    {
-        CoreCheatEnabled([code UTF8String], 1);
+        CoreCheatEnabled([cheatCode UTF8String], 1);
         return YES;
     }
     
-    m64p_cheat_code *gsCode = (m64p_cheat_code *)calloc(1, sizeof(m64p_cheat_code));
+    NSArray<NSString *> *codes = [cheatCode componentsSeparatedByString:@"\n"];
+    m64p_cheat_code *codeList = (m64p_cheat_code *)calloc(codes.count, sizeof(m64p_cheat_code));
     
-    NSString *address = [code substringWithRange:NSMakeRange(0, 8)];
-    NSString *value = [code substringWithRange:NSMakeRange(8, 4)];
+    for (int i = 0; i < codes.count; i++)
+    {
+        NSString *code = codes[i];
+        code = [code stringByReplacingOccurrencesOfString:@" " withString:@""];
+        
+        if (code.length != 12)
+        {
+            return NO;
+        }
+        
+        m64p_cheat_code *gsCode = codeList + i;
+        
+        NSString *address = [code substringWithRange:NSMakeRange(0, 8)];
+        NSString *value = [code substringWithRange:NSMakeRange(8, 4)];
+        
+        unsigned int outAddress = 0;
+        [[NSScanner scannerWithString:address] scanHexInt:&outAddress];
+        
+        unsigned int outValue = 0;
+        [[NSScanner scannerWithString:value] scanHexInt:&outValue];
+        
+        gsCode->address = outAddress;
+        gsCode->value = outValue;
+    }
     
-    unsigned int outAddress = 0;
-    [[NSScanner scannerWithString:address] scanHexInt:&outAddress];
-    
-    unsigned int outValue = 0;
-    [[NSScanner scannerWithString:value] scanHexInt:&outValue];
-    
-    gsCode->address = outAddress;
-    gsCode->value = outValue;
-    
-    if (CoreAddCheat([code UTF8String], gsCode, 1) != M64ERR_SUCCESS)
+    if (CoreAddCheat([cheatCode UTF8String], codeList, codes.count) != M64ERR_SUCCESS)
     {
         return NO;
     }
     
-    [self.activeCheats addObject:code];
+    [self.activeCheats addObject:cheatCode];
     
     return YES;
 }
