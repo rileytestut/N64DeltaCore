@@ -35,6 +35,17 @@
 #import <dlfcn.h>
 #import <mach-o/ldsyms.h>
 
+m64p_error CALL Video_PluginStartup(m64p_dynlib_handle CoreLibHandle, void *Context, void (*DebugCallback)(void *, int, const char *));
+m64p_error CALL Video_PluginShutdown(void);
+m64p_error CALL Video_PluginGetVersion(m64p_plugin_type *PluginType, int *PluginVersion, int *APIVersion, const char **PluginNamePtr, int *Capabilities);
+int  CALL Video_RomOpen(void);
+void CALL Video_RomClosed(void);
+
+m64p_error CALL RSP_PluginStartup(m64p_dynlib_handle CoreLibHandle, void *Context, void (*DebugCallback)(void *, int, const char *));
+m64p_error CALL RSP_PluginShutdown(void);
+m64p_error CALL RSP_PluginGetVersion(m64p_plugin_type *PluginType, int *PluginVersion, int *APIVersion, const char **PluginNamePtr, int *Capabilities);
+void CALL RSP_RomClosed(void);
+
 @interface N64EmulatorBridge () <DLTAEmulatorBridging>
 {
 @public
@@ -380,6 +391,20 @@ static void MupenSetAudioSpeed(int percent)
     if (![self didLoadPlugins])
     {
         /* Prepare Plugins */
+        
+#if STATIC_LIBRARY
+        // Ensure symbols are _not_ stripped by referencing them from log statements.
+        NSLog(@"Address of Video_PluginStartup: %p", Video_PluginStartup);
+        NSLog(@"Address of Video_PluginShutdown: %p", Video_PluginShutdown);
+        NSLog(@"Address of Video_PluginGetVersion: %p", Video_PluginGetVersion);
+        NSLog(@"Address of Video_RomOpen: %p", Video_RomOpen);
+        NSLog(@"Address of Video_RomClosed: %p", Video_RomClosed);
+        
+        NSLog(@"Address of RSP_PluginStartup: %p", RSP_PluginStartup);
+        NSLog(@"Address of RSP_PluginShutdown: %p", RSP_PluginShutdown);
+        NSLog(@"Address of RSP_PluginGetVersion: %p", RSP_PluginGetVersion);
+        NSLog(@"Address of RSP_RomClosed: %p", RSP_RomClosed);
+#endif
         
         BOOL didLoadVideoPlugin = [self loadPlugin:@"N64DeltaCore_Video" type:M64PLUGIN_GFX];
         NSAssert(didLoadVideoPlugin, @"Failed to load video plugin.");
