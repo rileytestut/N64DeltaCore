@@ -54,7 +54,6 @@ void CALL RSP_RomClosed(void);
 
 @property (nonatomic, copy, nullable, readwrite) NSURL *gameURL;
 
-@property (nonatomic, readonly) NSURL *n64DirectoryURL;
 @property (nonatomic, readonly) NSURL *gameSaveDirectoryURL;
 @property (nonatomic, readonly) NSURL *configDirectoryURL;
 
@@ -291,8 +290,8 @@ static void MupenSetAudioSpeed(int percent)
     NSArray<NSString *> *iniFiles = @[@"GLideN64", @"GLideN64.custom", @"mupen64plus"];
     for (NSString *filename in iniFiles)
     {
-        NSURL *sourceURL = [NSBundle.n64Resources URLForResource:filename withExtension:@"ini"];
-        NSURL *destinationURL = [[self.n64DirectoryURL URLByAppendingPathComponent:filename] URLByAppendingPathExtension:@"ini"];
+        NSURL *sourceURL = [N64EmulatorBridge.n64Resources URLForResource:filename withExtension:@"ini"];
+        NSURL *destinationURL = [[N64EmulatorBridge.coreDirectoryURL URLByAppendingPathComponent:filename] URLByAppendingPathExtension:@"ini"];
         
         if ([[NSFileManager defaultManager] fileExistsAtPath:destinationURL.path isDirectory:nil])
         {
@@ -307,14 +306,14 @@ static void MupenSetAudioSpeed(int percent)
     }
     
     /* Prepare Emulation */
-    CoreStartup(FRONTEND_API_VERSION, self.configDirectoryURL.fileSystemRepresentation, self.n64DirectoryURL.fileSystemRepresentation, (__bridge void *)self, MupenDebugCallback, (__bridge void *)self, MupenStateCallback);
+    CoreStartup(FRONTEND_API_VERSION, self.configDirectoryURL.fileSystemRepresentation, N64EmulatorBridge.coreDirectoryURL.fileSystemRepresentation, (__bridge void *)self, MupenDebugCallback, (__bridge void *)self, MupenStateCallback);
     
     /* Configure Core */
     m64p_handle config;
     ConfigOpenSection("Core", &config);
     
     ConfigSetParameter(config, "SaveSRAMPath", M64TYPE_STRING, self.gameSaveDirectoryURL.fileSystemRepresentation);
-    ConfigSetParameter(config, "SharedDataPath", M64TYPE_STRING, self.n64DirectoryURL.fileSystemRepresentation);
+    ConfigSetParameter(config, "SharedDataPath", M64TYPE_STRING, N64EmulatorBridge.coreDirectoryURL.fileSystemRepresentation);
     
     // Pure Interpreter = 0, Cached Interpreter = 1, Dynamic Recompiler = 2
     int emulationMode = 1;
@@ -704,23 +703,9 @@ static void MupenSetAudioSpeed(int percent)
     return [self isNTSC] ? (1.0 / 60.0) : (1.0 / 50.0);
 }
 
-- (NSURL *)n64DirectoryURL
-{
-    NSURL *temporaryDirectoryURL = [NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES];
-    NSURL *n64DirectoryURL = [temporaryDirectoryURL URLByAppendingPathComponent:@"com.rileytestut.Delta.N64DeltaCore" isDirectory:YES];
-    
-    NSError *error = nil;
-    if (![[NSFileManager defaultManager] createDirectoryAtURL:n64DirectoryURL withIntermediateDirectories:YES attributes:nil error:nil])
-    {
-        NSLog(@"Unable to create N64 Directory. %@", error);
-    }
-    
-    return n64DirectoryURL;
-}
-
 - (NSURL *)gameSaveDirectoryURL
 {
-    NSURL *gameSaveDirectoryURL = [self.n64DirectoryURL URLByAppendingPathComponent:@"Saves" isDirectory:YES];
+    NSURL *gameSaveDirectoryURL = [N64EmulatorBridge.coreDirectoryURL URLByAppendingPathComponent:@"Saves" isDirectory:YES];
     
     NSError *error = nil;
     if (![[NSFileManager defaultManager] createDirectoryAtURL:gameSaveDirectoryURL withIntermediateDirectories:YES attributes:nil error:nil])
@@ -733,7 +718,7 @@ static void MupenSetAudioSpeed(int percent)
 
 - (NSURL *)configDirectoryURL
 {
-    NSURL *configDirectoryURL = [self.n64DirectoryURL URLByAppendingPathComponent:@"Config" isDirectory:YES];
+    NSURL *configDirectoryURL = [N64EmulatorBridge.coreDirectoryURL URLByAppendingPathComponent:@"Config" isDirectory:YES];
     
     NSError *error = nil;
     if (![[NSFileManager defaultManager] createDirectoryAtURL:configDirectoryURL withIntermediateDirectories:YES attributes:nil error:nil])

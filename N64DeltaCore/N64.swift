@@ -56,7 +56,7 @@ public struct N64: DeltaCoreProtocol
 {
     public static let core = N64()
     
-    public var name: String { "N64DeltaCore" }
+    public var name: String { "Mupen64Plus" }
     public var identifier: String { "com.rileytestut.N64DeltaCore" }
     
     public var gameType: GameType { GameType.n64 }
@@ -78,11 +78,17 @@ public struct N64: DeltaCoreProtocol
     }
 }
 
-extension Bundle
+// Expose DeltaCore properties to Objective-C.
+public extension N64EmulatorBridge
 {
-    // Expose resource bundle to Objective-C.
-    @objc(n64Resources) public class var __n64Resources: Bundle {
+    @objc(n64Resources) class var __n64Resources: Bundle {
         return N64.core.resourceBundle
     }
+    
+    @objc(coreDirectoryURL) class var __coreDirectoryURL: URL {
+        return _coreDirectoryURL
+    }
 }
+
+private let _coreDirectoryURL = N64.core.directoryURL
 

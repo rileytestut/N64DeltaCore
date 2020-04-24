@@ -10,12 +10,12 @@ Pod::Spec.new do |spec|
   spec.author             = { "Riley Testut" => "riley@rileytestut.com" }
   spec.social_media_url   = "https://twitter.com/rileytestut"
   
-  spec.source_files  = "N64DeltaCore/**/*.{h,m,mm,cpp,swift}", "Mupen64Plus/mupen64plus-core/src/backends/api/video_capture_backend.c", "Mupen64Plus/mupen64plus-core/src/device/dd/dd_controller.c", "Mupen64Plus/mupen64plus-core/src/device/controllers/paks/biopak.c", "Mupen64Plus/mupen64plus-core/src/backends/dummy_video_capture.c", "Mupen64Plus/mupen64plus-core/src/api/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/backends/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/device/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/main/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/osal/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/osd/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/plugin/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/subprojects/**/*.{h,hpp}", "libMupen64Plus/SDL/*.{h,hpp}"
+  spec.source_files  = "N64DeltaCore/**/*.{h,m,mm,cpp,swift}", "N64DeltaCore/N64DeltaCore.h", "Mupen64Plus/mupen64plus-core/src/backends/api/video_capture_backend.c", "Mupen64Plus/mupen64plus-core/src/device/dd/dd_controller.c", "Mupen64Plus/mupen64plus-core/src/device/controllers/paks/biopak.c", "Mupen64Plus/mupen64plus-core/src/backends/dummy_video_capture.c", "Mupen64Plus/mupen64plus-core/src/api/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/backends/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/device/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/main/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/osal/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/osd/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/src/plugin/**/*.{h,hpp}", "Mupen64Plus/mupen64plus-core/subprojects/**/*.{h,hpp}", "libMupen64Plus/SDL/*.{h,hpp}"
   spec.exclude_files = "Mupen64Plus/mupen64plus-core/src/api/config.h"
-  spec.public_header_files = "N64DeltaCore/Types/N64Types.h", "N64DeltaCore/Bridge/N64EmulatorBridge.h"
+  spec.public_header_files = "N64DeltaCore/Types/N64Types.h", "N64DeltaCore/Bridge/N64EmulatorBridge.h", "N64DeltaCore/N64DeltaCore.h"
   spec.header_mappings_dir = ""
   spec.resource_bundles = {
-    "N64DeltaCore" => ["N64DeltaCore/**/*.deltamapping", "N64DeltaCore/**/*.deltaskin", "Mupen64Plus/**/*.ini"]
+    "Mupen64Plus" => ["N64DeltaCore/**/*.deltamapping", "N64DeltaCore/**/*.deltaskin", "Mupen64Plus/**/*.ini"]
   }
   
   spec.xcconfig = {

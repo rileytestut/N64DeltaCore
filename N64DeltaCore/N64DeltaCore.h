@@ -15,5 +15,8 @@ FOUNDATION_EXPORT double N64DeltaCoreVersionNumber;
 FOUNDATION_EXPORT const unsigned char N64DeltaCoreVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <N64DeltaCore/PublicHeader.h>
+
+#if !STATIC_LIBRARY
 #import <N64DeltaCore/N64Types.h>
 #import <N64DeltaCore/N64EmulatorBridge.h>
+#endif
