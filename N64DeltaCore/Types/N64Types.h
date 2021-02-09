@@ -9,6 +9,6 @@
 #import <DeltaCore/DeltaTypes.h>
 
 // Extensible Enums
-FOUNDATION_EXPORT GameType const GameTypeN64 NS_SWIFT_NAME(GameType.n64);
+FOUNDATION_EXPORT GameType const GameTypeN64 NS_SWIFT_NAME(n64);
 
 FOUNDATION_EXPORT CheatType const CheatTypeGameShark;

@@ -8,10 +8,6 @@
 
 #import "N64EmulatorBridge.h"
 
-#import <DeltaCore/DeltaCore-Swift.h>
-#import "N64DeltaCore-Swift.h"
-#import "N64Types.h"
-
 #define M64P_CORE_PROTOTYPES
 #define N64_ANALOG_MAX 80
 
@@ -34,6 +30,14 @@
 
 #import <dlfcn.h>
 #import <mach-o/ldsyms.h>
+
+#import <DeltaCore/DeltaCore-Swift.h>
+
+#if STATIC_LIBRARY
+#import "N64DeltaCore-Swift.h"
+#else
+#import <N64DeltaCore/N64DeltaCore-Swift.h>
+#endif
 
 m64p_error CALL Video_PluginStartup(m64p_dynlib_handle CoreLibHandle, void *Context, void (*DebugCallback)(void *, int, const char *));
 m64p_error CALL Video_PluginShutdown(void);
