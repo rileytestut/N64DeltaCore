@@ -106,7 +106,6 @@
 		BF2EFA96224C1C080032AD78 /* ZilmarGFX_1_3.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF894224C1C070032AD78 /* ZilmarGFX_1_3.h */; };
 		BF2EFA97224C1C080032AD78 /* PaletteTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF895224C1C070032AD78 /* PaletteTexture.h */; };
 		BF2EFA98224C1C080032AD78 /* m64p_frontend.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF897224C1C070032AD78 /* m64p_frontend.h */; };
-		BF2EFA99224C1C080032AD78 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF898224C1C070032AD78 /* config.h */; };
 		BF2EFA9A224C1C090032AD78 /* ftxf86.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF89B224C1C070032AD78 /* ftxf86.h */; };
 		BF2EFA9B224C1C090032AD78 /* ftsnames.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF89C224C1C070032AD78 /* ftsnames.h */; };
 		BF2EFA9C224C1C090032AD78 /* ftwinfnt.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2EF89D224C1C070032AD78 /* ftwinfnt.h */; };
@@ -707,7 +706,6 @@
 		BF2EF894224C1C070032AD78 /* ZilmarGFX_1_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZilmarGFX_1_3.h; sourceTree = "<group>"; };
 		BF2EF895224C1C070032AD78 /* PaletteTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteTexture.h; sourceTree = "<group>"; };
 		BF2EF897224C1C070032AD78 /* m64p_frontend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m64p_frontend.h; sourceTree = "<group>"; };
-		BF2EF898224C1C070032AD78 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		BF2EF89B224C1C070032AD78 /* ftxf86.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftxf86.h; sourceTree = "<group>"; };
 		BF2EF89C224C1C070032AD78 /* ftsnames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftsnames.h; sourceTree = "<group>"; };
 		BF2EF89D224C1C070032AD78 /* ftwinfnt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftwinfnt.h; sourceTree = "<group>"; };
@@ -1236,7 +1234,6 @@
 		BF799532224BFF6C009B094F /* common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = common.c; sourceTree = "<group>"; };
 		BF799533224BFF6C009B094F /* frontend.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = frontend.c; sourceTree = "<group>"; };
 		BF799534224BFF6C009B094F /* m64p_frontend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m64p_frontend.h; sourceTree = "<group>"; };
-		BF799535224BFF6C009B094F /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		BF799536224BFF6C009B094F /* api_export.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = api_export.ver; sourceTree = "<group>"; };
 		BF799537224BFF6C009B094F /* m64p_vidext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m64p_vidext.h; sourceTree = "<group>"; };
 		BF799538224BFF6C009B094F /* m64p_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m64p_common.h; sourceTree = "<group>"; };
@@ -1914,7 +1911,6 @@
 			isa = PBXGroup;
 			children = (
 				BF2EF897224C1C070032AD78 /* m64p_frontend.h */,
-				BF2EF898224C1C070032AD78 /* config.h */,
 				BF2EF899224C1C070032AD78 /* freetype */,
 				BF2EF8F6224C1C070032AD78 /* m64p_vidext.h */,
 				BF2EF8F7224C1C070032AD78 /* m64p_common.h */,
@@ -2819,7 +2815,6 @@
 				BF799532224BFF6C009B094F /* common.c */,
 				BF799533224BFF6C009B094F /* frontend.c */,
 				BF799534224BFF6C009B094F /* m64p_frontend.h */,
-				BF799535224BFF6C009B094F /* config.h */,
 				BF799536224BFF6C009B094F /* api_export.ver */,
 				BF799537224BFF6C009B094F /* m64p_vidext.h */,
 				BF799538224BFF6C009B094F /* m64p_common.h */,
@@ -3430,7 +3425,6 @@
 				BF2EFB1F224C1C090032AD78 /* osal_files.h in Headers */,
 				BF2EFAF2224C1C090032AD78 /* m64p_vidext.h in Headers */,
 				BF2EFBF5224C1C0A0032AD78 /* gralloc.h in Headers */,
-				BF2EFA99224C1C080032AD78 /* config.h in Headers */,
 				BF2EFAB8224C1C090032AD78 /* fttrace.h in Headers */,
 				BF2EFB1B224C1C090032AD78 /* TexrectDrawer.h in Headers */,
 				BF2EFADE224C1C090032AD78 /* ftpfr.h in Headers */,
