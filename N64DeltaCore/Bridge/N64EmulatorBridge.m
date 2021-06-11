@@ -49,7 +49,7 @@ void CALL RSP_RomClosed(void);
 @interface N64EmulatorBridge () <DLTAEmulatorBridging>
 {
 @public
-    double inputs[20];
+    double inputs[4][20];
 }
 
 @property (nonatomic, copy, nullable, readwrite) NSURL *gameURL;
@@ -112,41 +112,41 @@ static void *dlopen_N64DeltaCore()
 
 static void MupenGetKeys(int Control, BUTTONS *Keys)
 {
-    Keys->R_DPAD = N64EmulatorBridge.sharedBridge->inputs[N64GameInputRight];
-    Keys->L_DPAD = N64EmulatorBridge.sharedBridge->inputs[N64GameInputLeft];
-    Keys->D_DPAD = N64EmulatorBridge.sharedBridge->inputs[N64GameInputDown];
-    Keys->U_DPAD = N64EmulatorBridge.sharedBridge->inputs[N64GameInputUp];
-    Keys->START_BUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputStart];
-    Keys->Z_TRIG = N64EmulatorBridge.sharedBridge->inputs[N64GameInputZ];
-    Keys->B_BUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputB];
-    Keys->A_BUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputA];
-    Keys->R_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputCRight];
-    Keys->L_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputCLeft];
-    Keys->D_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputCDown];
-    Keys->U_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[N64GameInputCUp];
-    Keys->R_TRIG = N64EmulatorBridge.sharedBridge->inputs[N64GameInputR];
-    Keys->L_TRIG = N64EmulatorBridge.sharedBridge->inputs[N64GameInputL];
+    Keys->R_DPAD = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputRight];
+    Keys->L_DPAD = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputLeft];
+    Keys->D_DPAD = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputDown];
+    Keys->U_DPAD = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputUp];
+    Keys->START_BUTTON = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputStart];
+    Keys->Z_TRIG = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputZ];
+    Keys->B_BUTTON = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputB];
+    Keys->A_BUTTON = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputA];
+    Keys->R_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputCRight];
+    Keys->L_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputCLeft];
+    Keys->D_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputCDown];
+    Keys->U_CBUTTON = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputCUp];
+    Keys->R_TRIG = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputR];
+    Keys->L_TRIG = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputL];
     
-    if (N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickLeft])
+    if (N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputAnalogStickLeft])
     {
-        Keys->X_AXIS = N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickLeft] * -N64_ANALOG_MAX;
+        Keys->X_AXIS = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputAnalogStickLeft] * -N64_ANALOG_MAX;
     }
-    else if (N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickRight])
+    else if (N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputAnalogStickRight])
     {
-        Keys->X_AXIS = N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickRight] * N64_ANALOG_MAX;
+        Keys->X_AXIS = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputAnalogStickRight] * N64_ANALOG_MAX;
     }
     else
     {
         Keys->X_AXIS = 0.0;
     }
     
-    if (N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickUp])
+    if (N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputAnalogStickUp])
     {
-        Keys->Y_AXIS = N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickUp] * N64_ANALOG_MAX;
+        Keys->Y_AXIS = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputAnalogStickUp] * N64_ANALOG_MAX;
     }
-    else if (N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickDown])
+    else if (N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputAnalogStickDown])
     {
-        Keys->Y_AXIS = N64EmulatorBridge.sharedBridge->inputs[N64GameInputAnalogStickDown] * -N64_ANALOG_MAX;
+        Keys->Y_AXIS = N64EmulatorBridge.sharedBridge->inputs[Control][N64GameInputAnalogStickDown] * -N64_ANALOG_MAX;
     }
     else
     {
@@ -158,11 +158,11 @@ static void MupenInitiateControllers (CONTROL_INFO ControlInfo)
 {
     ControlInfo.Controls[0].Present = 1;
     ControlInfo.Controls[0].Plugin = PLUGIN_RAW;
-    ControlInfo.Controls[1].Present = 0;
+    ControlInfo.Controls[1].Present = 1;
     ControlInfo.Controls[1].Plugin = PLUGIN_MEMPAK;
-    ControlInfo.Controls[2].Present = 0;
+    ControlInfo.Controls[2].Present = 1;
     ControlInfo.Controls[2].Plugin = PLUGIN_MEMPAK;
-    ControlInfo.Controls[3].Present = 0;
+    ControlInfo.Controls[3].Present = 1;
     ControlInfo.Controls[3].Plugin = PLUGIN_MEMPAK;
 }
 
@@ -470,24 +470,27 @@ static void MupenSetAudioSpeed(int percent)
 
 - (void)activateInput:(NSInteger)input
 {
-    inputs[input] = 1;
+    inputs[0][input] = 1;
 }
 
-- (void)activateInput:(NSInteger)input value:(double)value
+- (void)activateInput:(NSInteger)input value:(double)value at:(NSInteger)playerIndex
 {
-    inputs[input] = value;
+    inputs[playerIndex][input] = value;
 }
 
-- (void)deactivateInput:(NSInteger)input
+- (void)deactivateInput:(NSInteger)input at:(NSInteger)playerIndex
 {
-    inputs[input] = 0;
+    inputs[playerIndex][input] = 0;
 }
 
 - (void)resetInputs
 {
-    for (NSInteger input = 0; input < 18; input++)
+    for (NSInteger player = 0; player < 4; player++)
     {
-        [self deactivateInput:input];
+        for (NSInteger input = 0; input < 18; input++)
+        {
+            [self deactivateInput:input at:player];
+        }
     }
 }
 
