@@ -75,7 +75,6 @@ void CALL RSP_RomClosed(void);
 @property (nonatomic, strong, readonly) NSMutableDictionary<NSNumber *, void (^)(void)> *stateCallbacks;
 
 @property (nonatomic, strong, readwrite) AVAudioFormat *preferredAudioFormat;
-@property (nonatomic, readwrite) CGSize preferredVideoDimensions;
 
 @property (nonatomic, strong) NSMutableSet *activeCheats;
 @property (nonatomic) m64p_plugin_type activePluginType;
@@ -277,7 +276,6 @@ static void MupenSetAudioSpeed(int percent)
         _stateCallbacks = [NSMutableDictionary dictionary];
         
         _preferredAudioFormat = [[AVAudioFormat alloc] initWithCommonFormat:AVAudioPCMFormatInt16 sampleRate:44100 channels:2 interleaved:YES];
-        _preferredVideoDimensions = CGSizeMake(640, 480);
         
         _activeCheats = [NSMutableSet set];
     }
@@ -836,7 +834,7 @@ EXPORT m64p_error CALL VidExt_ListFullscreenModes(m64p_2d_size *SizeArray, int *
 
 EXPORT m64p_error CALL VidExt_SetVideoMode(int Width, int Height, int BitsPerPixel, m64p_video_mode ScreenMode, m64p_video_flags Flags)
 {
-    N64EmulatorBridge.sharedBridge.preferredVideoDimensions = CGSizeMake(Width, Height);
+    N64EmulatorBridge.sharedBridge.videoRenderer.viewport = CGRectMake(0, 0, Width, Height);
     return M64ERR_SUCCESS;
 }
 
@@ -868,7 +866,7 @@ EXPORT m64p_error CALL VidExt_GL_GetAttribute(m64p_GLattr Attr, int *pValue)
 
 EXPORT m64p_error CALL VidExt_GL_SwapBuffers(void)
 {
-    [N64EmulatorBridge.sharedBridge.videoRenderer processFrame];
+    [N64EmulatorBridge.sharedBridge processFrame];
     
     return M64ERR_SUCCESS;
 }
