@@ -6,7 +6,11 @@
 //  Copyright © 2020 Riley Testut. All rights reserved.
 //
 
+#if SWIFT_PACKAGE
+@import CDeltaCore;
+#else
 #import <DeltaCore/DeltaTypes.h>
+#endif
 
 // Extensible Enums
 FOUNDATION_EXPORT GameType const GameTypeN64 NS_SWIFT_NAME(n64);

@@ -11,6 +11,10 @@ import AVFoundation
 
 import DeltaCore
 
+#if SWIFT_PACKAGE
+import N64Bridge
+#endif
+
 @objc public enum N64GameInput: Int, Input
 {
     // D-Pad
@@ -71,24 +75,16 @@ public struct N64: DeltaCoreProtocol
         return [gameSharkFormat]
     }
     
-    public var emulatorBridge: EmulatorBridging { N64EmulatorBridge.shared }
+    public var emulatorBridge: EmulatorBridging { N64EmulatorBridge.shared as! EmulatorBridging }
+    
+    #if SWIFT_PACKAGE
+    public var resourceBundle: Bundle { Bundle.module }
+    #endif
     
     private init()
     {
+        N64EmulatorBridge.shared.coreDirectoryURL = self.directoryURL
+        N64EmulatorBridge.shared.coreResourcesBundle = self.resourceBundle
     }
 }
-
-// Expose DeltaCore properties to Objective-C.
-public extension N64EmulatorBridge
-{
-    @objc(n64Resources) class var __n64Resources: Bundle {
-        return N64.core.resourceBundle
-    }
-    
-    @objc(coreDirectoryURL) class var __coreDirectoryURL: URL {
-        return _coreDirectoryURL
-    }
-}
-
-private let _coreDirectoryURL = N64.core.directoryURL
 

@@ -23,6 +23,9 @@ __attribute__((visibility("default")))
 
 @property (nonatomic, readonly) AVAudioFormat *preferredAudioFormat;
 
+@property (copy, nonatomic, nullable) NSURL *coreDirectoryURL;
+@property (strong, nonatomic, nullable) NSBundle *coreResourcesBundle;
+
 @end
 
 NS_ASSUME_NONNULL_END
