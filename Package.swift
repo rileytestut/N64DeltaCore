@@ -78,8 +78,12 @@ let package = Package(
                 "Mupen64Plus/mupen64plus-core/src/main/screenshot.c",
                 "Mupen64Plus/mupen64plus-core/src/main/profile.c",
                 "Mupen64Plus/mupen64plus-core/src/main/main.c",
+                
+                "Mupen64Plus/mupen64plus-core/subprojects/oglft"
             ],
             sources: [
+                "Mupen64Plus/mupen_main.c",
+                
                 "libMupen64Plus/SDL",
                 "Mupen64Plus/mupen64plus-core/src/backends",
                 "Mupen64Plus/mupen64plus-core/src/api",
@@ -87,7 +91,9 @@ let package = Package(
                 "Mupen64Plus/mupen64plus-core/src/main",
                 "Mupen64Plus/mupen64plus-core/src/plugin",
 
-                "Mupen64Plus/mupen64plus-core/src/osal/files_macos.c"
+                "Mupen64Plus/mupen64plus-core/src/osal/files_macos.c",
+                
+                "Mupen64Plus/mupen64plus-core/subprojects"
                 
                 //"Mupen64Plus/mupen64plus-core/src/backends/api/video_capture_backend.c",
                 //"Mupen64Plus/mupen64plus-core/src/device/dd/dd_controller.c",
@@ -97,6 +103,7 @@ let package = Package(
             cSettings: [
                 .headerSearchPath("libMupen64Plus/SDL"),
                 .headerSearchPath("Mupen64Plus/mupen64plus-core/src"),
+                .headerSearchPath("Mupen64Plus/mupen64plus-core/src/main"),
                 .headerSearchPath("Mupen64Plus/mupen64plus-core/subprojects/**"),
                 
                 .define("__unix__", to: "1"),
