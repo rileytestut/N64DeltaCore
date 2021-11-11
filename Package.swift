@@ -58,6 +58,9 @@ let package = Package(
                     "-fmodules",
                     "-fcxx-modules",
                 ])
+            ],
+            linkerSettings: [
+                .unsafeFlags(["-unexported_symbols_list", "symbols.hidden"])
             ]
         ),
         .target(

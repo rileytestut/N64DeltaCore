@@ -1,0 +1,3 @@
+_unzClose
+_unzGetCurrentFileInfo
+_unzCloseCurrentFile
