@@ -10,4 +10,6 @@
 
 GameType const GameTypeN64 = @"com.rileytestut.delta.game.n64";
 
+#if !SWIFT_PACKAGE
 CheatType const CheatTypeGameShark = @"GameShark";
+#endif
