@@ -39,14 +39,6 @@ let package = Package(
             resources: [
                 .copy("Controller Skin/Standard.deltaskin"),
                 .copy("Standard.deltamapping")
-            ],
-            linkerSettings: [
-                .unsafeFlags([
-                    "-Wl,-unexported_symbol,_unzClose"
-//                    "-unexported_symbol", "_unzClose",
-//                    "-unexported_symbol", "_unzGetCurrentFileInfo",
-//                    "-unexported_symbol", "_unzCloseCurrentFile",
-                ])
             ]
         ),
         .target(
@@ -105,6 +97,7 @@ let package = Package(
                 
                 "Mupen64Plus/mupen64plus-core/subprojects/oglft",
                 
+                "Mupen64Plus/mupen64plus-core/subprojects/minizip/unzip.c",
                 "Mupen64Plus/mupen64plus-core/subprojects/xxhash/xxhash.c",
             ],
             sources: [
