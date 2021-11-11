@@ -11,7 +11,6 @@ let package = Package(
     products: [
         .library(
             name: "N64DeltaCore",
-            type: .dynamic,
             targets: ["N64DeltaCore", "N64Bridge", "N64Swift", "Mupen64Plus", "Mupen64Plus_RSP", "Mupen64Plus_Video"]
         )
     ],
@@ -48,7 +47,6 @@ let package = Package(
             path: "N64DeltaCore/Bridge",
             publicHeadersPath: "",
             cSettings: [
-                .define("STATIC_LIBRARY", to: "1"),
                 .headerSearchPath("../../libMupen64Plus/SDL"),
                 .headerSearchPath("../../Mupen64Plus/mupen64plus-core/src"),
                 //.headerSearchPath("../../Mupen64Plus/mupen64plus-core/src/api"),
