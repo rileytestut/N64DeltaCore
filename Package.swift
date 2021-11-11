@@ -53,7 +53,11 @@ let package = Package(
                 .headerSearchPath("../../Mupen64Plus/mupen64plus-core/src/osd"),
                 .headerSearchPath("../../Mupen64Plus/mupen64plus-core/subprojects/**"),
                 //.headerSearchPath("../../Mupen64Plus/mupen64plus-core/GLideN64/src"),
-                .unsafeFlags(["-fmodules", "-fcxx-modules"])
+                
+                .unsafeFlags([
+                    "-fmodules",
+                    "-fcxx-modules",
+                ])
             ]
         ),
         .target(
@@ -66,6 +70,18 @@ let package = Package(
             dependencies: [],
             path: "",
             exclude: [
+                "Mupen64Plus/GLideN64",
+                "Mupen64Plus/GLideN64/src",
+                "Mupen64Plus/mupen64plus-rsp-hle",
+                "Mupen64Plus/libpng",
+                
+                "N64DeltaCore",
+                "N64DeltaCore-RSP",
+                "N64DeltaCore-Video/GLideN64",
+                "N64DeltaCore.podspec",
+                "N64DeltaCore.xcodeproj",
+                
+                
                 "Mupen64Plus/mupen64plus-core/src/backends/opencv_video_capture.cpp",
                 "Mupen64Plus/mupen64plus-core/src/api/vidext.c",
                 "Mupen64Plus/mupen64plus-core/src/device/r4300/x86",
@@ -94,11 +110,6 @@ let package = Package(
                 "Mupen64Plus/mupen64plus-core/src/osal/files_macos.c",
                 
                 "Mupen64Plus/mupen64plus-core/subprojects"
-                
-                //"Mupen64Plus/mupen64plus-core/src/backends/api/video_capture_backend.c",
-                //"Mupen64Plus/mupen64plus-core/src/device/dd/dd_controller.c",
-                //"Mupen64Plus/mupen64plus-core/src/device/controllers/paks/biopak.c",
-                //"Mupen64Plus/mupen64plus-core/src/backends/dummy_video_capture.c",
             ],
             cSettings: [
                 .headerSearchPath("libMupen64Plus/SDL"),
@@ -120,7 +131,6 @@ let package = Package(
 //                    "-flto",
                     "-fomit-frame-pointer",
                     "-fno-strict-aliasing",
-                    "-fvisibility=hidden",
                     "-pthread",
                     "-fPIC",
                     "-ffast-math"
@@ -151,23 +161,12 @@ let package = Package(
             cSettings: [
                 .headerSearchPath("mupen64plus-rsp-hle/src"),
                 .headerSearchPath("../Mupen64Plus/mupen64plus-core/src/api"),
-//                .headerSearchPath("Mupen64Plus/mupen64plus-core/subprojects/**"),
                 
                 .define("__unix__", to: "1"),
-//                .define("M64P_PARALLEL", to: "1"),
-//                .define("IN_OPENEMU", to: "1"),
-//                .define("NO_ASM", to: "1"),
-//                .define("M64P_CORE_PROTOTYPES", to: "1"),
-//                .define("NDEBUG", to: "1"),
-//                .define("PIC", to: "1"),
-//                .define("USE_GLES", to: "1"),
                 .define("GCC", to: "1"),
                 
                 .unsafeFlags([
-//                    "-flto",
-//                    "-fomit-frame-pointer",
                     "-fno-strict-aliasing",
-//                    "-fvisibility=hidden",
                     "-pthread",
                     "-fPIC",
                     "-ffast-math"
@@ -197,10 +196,6 @@ let package = Package(
                 "GLideN64/src/GLideNHQ/Ext_TxFilter.cpp",
                 "GLideN64/src/GLideNHQ/TxDbg.cpp",
 
-//                "GLideN64/src/windows",
-//                "GLideN64/src/windows",
-//                "GLideN64/src/windows",
-                
                 "GLideN64/src/osal/osal_files_unix.c",
                 "GLideN64/src/osal/osal_files_win32.c",
                 
@@ -216,21 +211,17 @@ let package = Package(
                 
                 "GLideN64/src/CommonPluginAPI.cpp",
                 "GLideN64/src/MupenPlusPluginAPI.cpp",
-                "GLideN64/src/MupenPlusAPIImpl.cpp",
-                "GLideN64/src/CommonAPIImpl_mupenplus.cpp",
-                "GLideN64/src/Config_mupenplus.cpp"
+                "GLideN64/src/common/CommonAPIImpl_common.cpp",
+                "GLideN64/src/mupenplus/MupenPlusAPIImpl.cpp",
+                "GLideN64/src/mupenplus/CommonAPIImpl_mupenplus.cpp",
+                "GLideN64/src/mupenplus/Config_mupenplus.cpp",
                 
-//                "mupen64plus-rsp-hle/LICENSES",
-//                "mupen64plus-rsp-hle/projects",
-//                "mupen64plus-rsp-hle/RELEASE",
-//
-//                "mupen64plus-rsp-hle/src/osal_dynamiclib_unix.c",
-//                "mupen64plus-rsp-hle/src/osal_dynamiclib_win32.c",
-//                "mupen64plus-rsp-hle/src/plugin.c"
+                "GLideN64/src/xxHash",
             ],
             sources: [
-                "plugin_delta.c",
+                "plugin_delta.cpp",
                 "TxDbg_ios.mm",
+                
                 "GLideN64/src",
                 
                 "libpng/png.c",
@@ -271,10 +262,7 @@ let package = Package(
                 .define("PNG_ARM_NEON_OPT", to: "0"),
                 
                 .unsafeFlags([
-//                    "-flto",
-//                    "-fomit-frame-pointer",
                     "-fno-strict-aliasing",
-//                    "-fvisibility=hidden",
                     "-pthread",
                     "-fPIC",
                     "-ffast-math",
