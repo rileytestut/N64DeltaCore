@@ -39,6 +39,14 @@ let package = Package(
             resources: [
                 .copy("Controller Skin/Standard.deltaskin"),
                 .copy("Standard.deltamapping")
+            ],
+            linkerSettings: [
+                .unsafeFlags([
+                    "-Wl,-unexported_symbol,_unzClose"
+//                    "-unexported_symbol", "_unzClose",
+//                    "-unexported_symbol", "_unzGetCurrentFileInfo",
+//                    "-unexported_symbol", "_unzCloseCurrentFile",
+                ])
             ]
         ),
         .target(
@@ -58,9 +66,6 @@ let package = Package(
                     "-fmodules",
                     "-fcxx-modules",
                 ])
-            ],
-            linkerSettings: [
-                .unsafeFlags(["-unexported_symbols_list", "symbols.hidden"])
             ]
         ),
         .target(
