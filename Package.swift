@@ -103,7 +103,9 @@ let package = Package(
                 "Mupen64Plus/mupen64plus-core/src/main/profile.c",
                 "Mupen64Plus/mupen64plus-core/src/main/main.c",
                 
-                "Mupen64Plus/mupen64plus-core/subprojects/oglft"
+                "Mupen64Plus/mupen64plus-core/subprojects/oglft",
+                
+                "Mupen64Plus/mupen64plus-core/subprojects/xxhash/xxhash.c",
             ],
             sources: [
                 "Mupen64Plus/mupen_main.c",
@@ -134,6 +136,7 @@ let package = Package(
                 .define("PIC", to: "1"),
                 .define("USE_GLES", to: "1"),
                 .define("GCC", to: "1"),
+                .define("XXH_INLINE_ALL", to: "1"),
                 
                 .unsafeFlags([
 //                    "-flto",
