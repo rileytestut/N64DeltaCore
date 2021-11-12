@@ -57,6 +57,8 @@ let package = Package(
                 .headerSearchPath("../../Mupen64Plus/mupen64plus-core/subprojects/**"),
                 //.headerSearchPath("../../Mupen64Plus/mupen64plus-core/GLideN64/src"),
                 
+                .define("STATIC_LIBRARY", to: "1"),
+                
                 .unsafeFlags([
                     "-fmodules",
                     "-fcxx-modules",
