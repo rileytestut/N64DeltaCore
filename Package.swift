@@ -38,7 +38,10 @@ let package = Package(
             sources: ["N64.swift"],
             resources: [
                 .copy("Controller Skin/Standard.deltaskin"),
-                .copy("Standard.deltamapping")
+                .copy("Standard.deltamapping"),
+                .copy("Mupen64Plus/mupen64plus-core/data/mupen64plus.ini"),
+                .copy("Mupen64Plus/GLideN64/ini/GLideN64.ini"),
+                .copy("Mupen64Plus/GLideN64/ini/GLideN64.custom.ini"),
             ]
         ),
         .target(
