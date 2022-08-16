@@ -27,6 +27,12 @@ Pod::Spec.new do |spec|
     "GCC_PREPROCESSOR_DEFINITIONS" => "STATIC_LIBRARY=1"
   }
   
+  spec.script_phase = {
+    :name => 'Get GlideN64 Revision.h',
+    :script => '"${PODS_TARGET_SRCROOT}/Mupen64Plus/GLideN64/src/getRevision.sh"',
+    :execution_position => :before_compile
+  }
+  
   spec.dependency 'DeltaCore'
   
   spec.subspec 'RSP' do |rsp|
