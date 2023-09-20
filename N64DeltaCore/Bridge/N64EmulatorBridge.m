@@ -489,7 +489,7 @@ static void MupenSetAudioSpeed(int percent)
     {
         for (NSInteger input = 0; input < 18; input++)
         {
-            [self deactivateInput:input at:player];
+            [self deactivateInput:input at:playerIndex];
         }
     }
 }
