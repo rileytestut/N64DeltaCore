@@ -473,12 +473,12 @@ static void MupenSetAudioSpeed(int percent)
     inputs[0][input] = 1;
 }
 
-- (void)activateInput:(NSInteger)input value:(double)value at:(NSInteger)playerIndex
+- (void)activateInput:(NSInteger)input value:(double)value playerIndex:(NSInteger)playerIndex
 {
     inputs[playerIndex][input] = value;
 }
 
-- (void)deactivateInput:(NSInteger)input at:(NSInteger)playerIndex
+- (void)deactivateInput:(NSInteger)input playerIndex:(NSInteger)playerIndex
 {
     inputs[playerIndex][input] = 0;
 }
@@ -489,7 +489,7 @@ static void MupenSetAudioSpeed(int percent)
     {
         for (NSInteger input = 0; input < 18; input++)
         {
-            [self deactivateInput:input at:playerIndex];
+            [self deactivateInput:input playerIndex:playerIndex];
         }
     }
 }
