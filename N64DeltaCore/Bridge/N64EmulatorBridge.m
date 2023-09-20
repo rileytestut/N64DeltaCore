@@ -157,7 +157,7 @@ static void MupenGetKeys(int Control, BUTTONS *Keys)
 static void MupenInitiateControllers (CONTROL_INFO ControlInfo)
 {
     ControlInfo.Controls[0].Present = 1;
-    ControlInfo.Controls[0].Plugin = PLUGIN_RAW;
+    ControlInfo.Controls[0].Plugin = PLUGIN_MEMPAK;
     ControlInfo.Controls[1].Present = 1;
     ControlInfo.Controls[1].Plugin = PLUGIN_MEMPAK;
     ControlInfo.Controls[2].Present = 1;
