@@ -468,11 +468,6 @@ static void MupenSetAudioSpeed(int percent)
 
 #pragma mark - Inputs -
 
-- (void)activateInput:(NSInteger)input
-{
-    inputs[0][input] = 1;
-}
-
 - (void)activateInput:(NSInteger)input value:(double)value playerIndex:(NSInteger)playerIndex
 {
     inputs[playerIndex][input] = value;
