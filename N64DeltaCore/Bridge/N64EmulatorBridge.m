@@ -419,7 +419,10 @@ static void MupenSetAudioSpeed(int percent)
     
     self.running = YES;
     
-    [NSThread detachNewThreadSelector:@selector(startEmulationLoop) toTarget:self withObject:nil];
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(startEmulationLoop) object:nil];
+    [thread setName:@"N64 Emulation"];
+    [thread setQualityOfService:NSQualityOfServiceUserInitiated];
+    [thread start];
     
     dispatch_semaphore_wait(self.endFrameSemaphore, DISPATCH_TIME_FOREVER);
 }
@@ -447,7 +450,7 @@ static void MupenSetAudioSpeed(int percent)
     
     [self.activeCheats removeAllObjects];
     
-    self.running = NO;    
+    self.running = NO;
 }
 
 - (void)pause
