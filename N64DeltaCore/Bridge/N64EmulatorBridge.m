@@ -379,6 +379,18 @@ static void MupenSetAudioSpeed(int percent)
     ConfigSetDefaultBool(gliden64, "ShowInternalResolution", NO, NULL);
     ConfigSetDefaultBool(gliden64, "ShowRenderingResolution", NO, NULL);
     
+    NSURL *txPathURL = [N64EmulatorBridge.coreDirectoryURL URLByAppendingPathComponent:@"hires_texture" isDirectory:YES];
+    [[NSFileManager defaultManager] createDirectoryAtURL:txPathURL withIntermediateDirectories:YES attributes:nil error:nil];
+    ConfigSetParameter(gliden64, "txPath", M64TYPE_STRING, txPathURL.fileSystemRepresentation);
+    
+    NSURL *txCachePathURL = [N64EmulatorBridge.coreDirectoryURL URLByAppendingPathComponent:@"cache" isDirectory:YES];
+    [[NSFileManager defaultManager] createDirectoryAtURL:txCachePathURL withIntermediateDirectories:YES attributes:nil error:nil];
+    ConfigSetParameter(gliden64, "txCachePath", M64TYPE_STRING, txCachePathURL.fileSystemRepresentation);
+    
+    NSURL *txDumpPathURL = [N64EmulatorBridge.coreDirectoryURL URLByAppendingPathComponent:@"texture_dump" isDirectory:YES];
+    [[NSFileManager defaultManager] createDirectoryAtURL:txDumpPathURL withIntermediateDirectories:YES attributes:nil error:nil];
+    ConfigSetParameter(gliden64, "txDumpPath", M64TYPE_STRING, txDumpPathURL.fileSystemRepresentation);
+    
     ConfigSaveSection("Video-GLideN64");
     
     NSData *romData = [NSData dataWithContentsOfURL:gameURL options:NSDataReadingMappedAlways error:nil];
