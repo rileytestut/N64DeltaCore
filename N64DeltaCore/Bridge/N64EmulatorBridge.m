@@ -319,8 +319,7 @@ static void MupenSetAudioSpeed(int percent)
     ConfigSetParameter(config, "SharedDataPath", M64TYPE_STRING, N64EmulatorBridge.coreDirectoryURL.fileSystemRepresentation);
     
     // Pure Interpreter = 0, Cached Interpreter = 1, Dynamic Recompiler = 2
-    int emulationMode = 1;
-    ConfigSetParameter(config, "R4300Emulator", M64TYPE_INT, &emulationMode);
+    ConfigSetDefaultInt(config, "R4300Emulator", 1, NULL);
     
     ConfigSaveSection("Core");
     
@@ -329,14 +328,10 @@ static void MupenSetAudioSpeed(int percent)
     m64p_handle video;
     ConfigOpenSection("Video-General", &video);
     
-    int useFullscreen = 1;
-    ConfigSetParameter(video, "Fullscreen", M64TYPE_BOOL, &useFullscreen);
+    ConfigSetDefaultInt(video, "Fullscreen", 1, NULL);
+    ConfigSetDefaultInt(video, "ScreenWidth", 640, NULL);
+    ConfigSetDefaultInt(video, "ScreenHeight", 480, NULL);
     
-    int screenWidth = 640;
-    ConfigSetParameter(video, "ScreenWidth", M64TYPE_INT, &screenWidth);
-    
-    int screenHeight = 480;
-    ConfigSetParameter(video, "ScreenHeight", M64TYPE_INT, &screenHeight);
     
     ConfigSaveSection("Video-General");
     
@@ -346,19 +341,17 @@ static void MupenSetAudioSpeed(int percent)
     ConfigOpenSection("Video-GLideN64", &gliden64);
     
     // 0 = stretch, 1 = 4:3, 2 = 16:9, 3 = adjust
-    int aspectRatio = 1;
-    ConfigSetParameter(gliden64, "AspectRatio", M64TYPE_INT, &aspectRatio);
+    ConfigSetDefaultInt(gliden64, "AspectRatio", 1, NULL);
     
     int enablePerPixelLighting = 1;
-    ConfigSetParameter(gliden64, "EnableHWLighting", M64TYPE_BOOL, &enablePerPixelLighting);
+    ConfigSetDefaultInt(gliden64, "EnableHWLighting", enablePerPixelLighting, NULL);
     
-    int osd = 0;
-    ConfigSetParameter(gliden64, "OnScreenDisplay", M64TYPE_BOOL, &osd);
-    ConfigSetParameter(gliden64, "ShowFPS", M64TYPE_BOOL, &osd);
-    ConfigSetParameter(gliden64, "ShowVIS", M64TYPE_BOOL, &osd);
-    ConfigSetParameter(gliden64, "ShowPercent", M64TYPE_BOOL, &osd);
-    ConfigSetParameter(gliden64, "ShowInternalResolution", M64TYPE_BOOL, &osd);
-    ConfigSetParameter(gliden64, "ShowRenderingResolution", M64TYPE_BOOL, &osd);
+    ConfigSetDefaultBool(gliden64, "OnScreenDisplay", NO, NULL);
+    ConfigSetDefaultBool(gliden64, "ShowFPS", NO, NULL);
+    ConfigSetDefaultBool(gliden64, "ShowVIS", NO, NULL);
+    ConfigSetDefaultBool(gliden64, "ShowPercent", NO, NULL);
+    ConfigSetDefaultBool(gliden64, "ShowInternalResolution", NO, NULL);
+    ConfigSetDefaultBool(gliden64, "ShowRenderingResolution", NO, NULL);
     
     ConfigSaveSection("Video-GLideN64");
     
