@@ -22,6 +22,7 @@ __attribute__((visibility("default")))
 @property (class, nonatomic, readonly) N64EmulatorBridge *sharedBridge;
 
 @property (nonatomic, readonly) AVAudioFormat *preferredAudioFormat;
+@property (nonatomic, readonly) CGSize preferredVideoResolution;
 
 @end
 

@@ -75,6 +75,7 @@ void CALL RSP_RomClosed(void);
 @property (nonatomic, strong, readonly) NSMutableDictionary<NSNumber *, void (^)(void)> *stateCallbacks;
 
 @property (nonatomic, strong, readwrite) AVAudioFormat *preferredAudioFormat;
+@property (nonatomic, readwrite) CGSize preferredVideoResolution;
 
 @property (nonatomic, strong) NSMutableSet *activeCheats;
 @property (nonatomic) m64p_plugin_type activePluginType;
@@ -274,10 +275,32 @@ static void MupenSetAudioSpeed(int percent)
         _stopEmulationSemaphore = dispatch_semaphore_create(0);
         
         _stateCallbacks = [NSMutableDictionary dictionary];
+        _activeCheats = [NSMutableSet set];
         
         _preferredAudioFormat = [[AVAudioFormat alloc] initWithCommonFormat:AVAudioPCMFormatInt16 sampleRate:44100 channels:2 interleaved:YES];
         
-        _activeCheats = [NSMutableSet set];
+        NSURL *configURL = [self.configDirectoryURL URLByAppendingPathComponent:@"mupen64plus.cfg"];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:configURL.path])
+        {
+            m64p_handle config;
+            ConfigExternalOpen(configURL.fileSystemRepresentation, &config);
+            
+            char *screenWidth[5];
+            ConfigExternalGetParameter(config, "Video-General", "ScreenWidth", screenWidth, 4);
+            
+            char *screenHeight[5];
+            ConfigExternalGetParameter(config, "Video-General", "ScreenHeight", screenHeight, 4);
+            
+            int preferredScreenWidth = atoi(screenWidth);
+            int preferredScreenHeight = atoi(screenHeight);
+            _preferredVideoResolution = CGSizeMake(preferredScreenWidth, preferredScreenHeight);
+            
+            ConfigExternalClose(config);
+        }
+        else
+        {
+            _preferredVideoResolution = CGSizeMake(640, 480);
+        }
     }
     
     return self;
@@ -332,6 +355,9 @@ static void MupenSetAudioSpeed(int percent)
     ConfigSetDefaultInt(video, "ScreenWidth", 640, NULL);
     ConfigSetDefaultInt(video, "ScreenHeight", 480, NULL);
     
+    int preferredScreenWidth = ConfigGetParamInt(video, "ScreenWidth");
+    int preferredScreenHeight = ConfigGetParamInt(video, "ScreenHeight");
+    self.preferredVideoResolution = CGSizeMake(preferredScreenWidth, preferredScreenHeight);
     
     ConfigSaveSection("Video-General");
     

@@ -64,7 +64,7 @@ public struct N64: DeltaCoreProtocol
     public var gameSaveFileExtension: String { "sav" }
     
     public var audioFormat: AVAudioFormat { N64EmulatorBridge.shared.preferredAudioFormat }
-    public var videoFormat: VideoFormat { VideoFormat(format: .openGLES3, dimensions: CGSize(width: 640, height: 480)) }
+    public var videoFormat: VideoFormat { VideoFormat(format: .openGLES3, dimensions: N64EmulatorBridge.shared.preferredVideoResolution) }
     
     public var supportedCheatFormats: Set<CheatFormat> {
         let gameSharkFormat = CheatFormat(name: NSLocalizedString("GameShark", comment: ""), format: "XXXXXXXX YYYY", type: .gameShark)
