@@ -503,6 +503,24 @@ static void MupenSetAudioSpeed(int percent)
     dispatch_semaphore_wait(self.endFrameSemaphore, DISPATCH_TIME_FOREVER);
 }
 
+- (nullable NSData *)readMemoryAtAddress:(NSInteger)address size:(NSInteger)size
+{
+    if (g_dev.mem.base == NULL)
+    {
+        return nil;
+    }
+    
+    if (address + size > RDRAM_MAX_SIZE)
+    {
+        // Beyond RAM bounds, return nil.
+        return nil;
+    }
+    
+    void *bytes = (g_dev.mem.base + address);
+    NSData *data = [NSData dataWithBytesNoCopy:bytes length:size freeWhenDone:NO];
+    return data;
+}
+
 #pragma mark - Inputs -
 
 - (void)activateInput:(NSInteger)input value:(double)value playerIndex:(NSInteger)playerIndex
