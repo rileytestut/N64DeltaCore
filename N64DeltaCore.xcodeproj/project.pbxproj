@@ -4020,7 +4020,6 @@
 				);
 				OTHER_CFLAGS = (
 					"$(inherited)",
-					"-mfpu=neon",
 					"-D__VEC4_OPT",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rileytestut.N64DeltaCore-Video";
@@ -4072,7 +4071,6 @@
 				);
 				OTHER_CFLAGS = (
 					"$(inherited)",
-					"-mfpu=neon",
 					"-D__VEC4_OPT",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rileytestut.N64DeltaCore-Video";
@@ -4257,6 +4255,14 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_CFLAGS = (
+					"-fno-strict-aliasing",
+					"-DGCC",
+					"-pthread",
+					"-fPIC",
+					"-D__unix__",
+					"-ffast-math",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.N64DeltaCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -4296,6 +4302,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+				);
+				OTHER_CFLAGS = (
+					"-fno-strict-aliasing",
+					"-DGCC",
+					"-pthread",
+					"-fPIC",
+					"-D__unix__",
+					"-ffast-math",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rileytestut.N64DeltaCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
