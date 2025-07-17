@@ -541,6 +541,20 @@
 			remoteGlobalIDString = BF799673224C09A1009B094F;
 			remoteInfo = "N64DeltaCore-RSP";
 		};
+		D5B44BFC2E29A75A00EA8B6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5B44BED2E29A70700EA8B6C /* DeltaCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF46895D1AACF36800A2586D;
+			remoteInfo = DeltaCore;
+		};
+		D5B44BFE2E29A76500EA8B6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5B44BED2E29A70700EA8B6C /* DeltaCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BF46895C1AACF36800A2586D;
+			remoteInfo = DeltaCore;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1403,6 +1417,7 @@
 		BF9B597F227A52CD0011C8B4 /* Standard.deltamapping */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Standard.deltamapping; sourceTree = "<group>"; };
 		BF9B5981227A52D40011C8B4 /* Standard.deltaskin */ = {isa = PBXFileReference; lastKnownFileType = file; name = Standard.deltaskin; path = "Controller Skin/Standard.deltaskin"; sourceTree = "<group>"; };
 		BFFDF04023E3CAC800931B96 /* N64Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64Types.h; sourceTree = "<group>"; };
+		D5B44BED2E29A70700EA8B6C /* DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeltaCore.xcodeproj; path = ../DeltaCore/DeltaCore.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2462,6 +2477,7 @@
 				BF799016224BF59E009B094F /* N64DeltaCore */,
 				BF799675224C09A1009B094F /* N64DeltaCore-RSP */,
 				BF2EF80E224C1BF60032AD78 /* N64DeltaCore-Video */,
+				D5B44BE02E29A6EE00EA8B6C /* Dependencies */,
 				BF799015224BF59E009B094F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -3233,6 +3249,22 @@
 			path = Types;
 			sourceTree = "<group>";
 		};
+		D5B44BE02E29A6EE00EA8B6C /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				D5B44BED2E29A70700EA8B6C /* DeltaCore.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		D5B44BF92E29A75A00EA8B6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5B44BFD2E29A75A00EA8B6C /* DeltaCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -3565,6 +3597,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D5B44BFF2E29A76500EA8B6C /* PBXTargetDependency */,
 				BF2EFCFB224C32140032AD78 /* PBXTargetDependency */,
 				BF7996C9224C0A43009B094F /* PBXTargetDependency */,
 				BF7994A4224BFDB1009B094F /* PBXTargetDependency */,
@@ -3644,6 +3677,12 @@
 			mainGroup = BF79900A224BF59E009B094F;
 			productRefGroup = BF799015224BF59E009B094F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D5B44BF92E29A75A00EA8B6C /* Products */;
+					ProjectRef = D5B44BED2E29A70700EA8B6C /* DeltaCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BF799013224BF59E009B094F /* N64DeltaCore */,
@@ -3653,6 +3692,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D5B44BFD2E29A75A00EA8B6C /* DeltaCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DeltaCore.framework;
+			remoteRef = D5B44BFC2E29A75A00EA8B6C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BF2EF80B224C1BF60032AD78 /* Resources */ = {
@@ -3977,6 +4026,11 @@
 			isa = PBXTargetDependency;
 			target = BF799673224C09A1009B094F /* N64DeltaCore-RSP */;
 			targetProxy = BF7996C8224C0A43009B094F /* PBXContainerItemProxy */;
+		};
+		D5B44BFF2E29A76500EA8B6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DeltaCore;
+			targetProxy = D5B44BFE2E29A76500EA8B6C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
