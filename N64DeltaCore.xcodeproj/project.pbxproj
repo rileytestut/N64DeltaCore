@@ -1418,6 +1418,7 @@
 		BF9B5981227A52D40011C8B4 /* Standard.deltaskin */ = {isa = PBXFileReference; lastKnownFileType = file; name = Standard.deltaskin; path = "Controller Skin/Standard.deltaskin"; sourceTree = "<group>"; };
 		BFFDF04023E3CAC800931B96 /* N64Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = N64Types.h; sourceTree = "<group>"; };
 		D5B44BED2E29A70700EA8B6C /* DeltaCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeltaCore.xcodeproj; path = ../DeltaCore/DeltaCore.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D5F113462E2AED6B00B73EC1 /* fp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fp.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1535,6 +1536,7 @@
 				BF2EF80F224C1BF60032AD78 /* N64DeltaCore_Video.h */,
 				BF0F903123E606680094BF82 /* plugin_delta.cpp */,
 				BF31A1F02267A81000C64A1B /* TxDbg_ios.mm */,
+				D5F113462E2AED6B00B73EC1 /* fp.h */,
 				BF2EF810224C1BF60032AD78 /* Info.plist */,
 				BF2EF815224C1C070032AD78 /* GLideN64 */,
 				BF2EFCCC224C317D0032AD78 /* libpng */,
@@ -4084,6 +4086,7 @@
 				USER_HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src/\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
+					"\"$(SRCROOT)/N64DeltaCore-Video\"",
 				);
 			};
 			name = Debug;
@@ -4135,6 +4138,7 @@
 				USER_HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Mupen64Plus/GLideN64/src/\"",
 					"\"$(SRCROOT)/Mupen64Plus/mupen64plus-core/src\"",
+					"\"$(SRCROOT)/N64DeltaCore-Video\"",
 				);
 			};
 			name = Release;
