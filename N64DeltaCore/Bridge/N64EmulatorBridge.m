@@ -11,6 +11,8 @@
 #define M64P_CORE_PROTOTYPES
 #define N64_ANALOG_MAX 80
 
+#undef ALIGN // Fixes duplicate definition warning
+
 #include "api/m64p_common.h"
 #include "api/m64p_config.h"
 #include "api/m64p_frontend.h"
@@ -106,7 +108,7 @@ static void MupenStateCallback(void *context, m64p_core_param paramType, int new
     N64EmulatorBridge.sharedBridge.stateCallbacks[@(paramType)] = nil;
 }
 
-static void *dlopen_N64DeltaCore()
+static void *dlopen_N64DeltaCore(void)
 {
     Dl_info info;
     
@@ -198,7 +200,7 @@ static void MupenAudioSampleRateChanged(int SystemType)
     N64EmulatorBridge.sharedBridge.preferredAudioFormat = [[AVAudioFormat alloc] initWithCommonFormat:AVAudioPCMFormatInt16 sampleRate:sampleRate channels:2 interleaved:YES];
 }
 
-static void MupenAudioLenChanged()
+static void MupenAudioLenChanged(void)
 {
     int LenReg = *AudioInfo.AI_LEN_REG;
     uint8_t *ptr = (uint8_t*)(AudioInfo.RDRAM + (*AudioInfo.AI_DRAM_ADDR_REG & 0xFFFFFF));
@@ -217,7 +219,7 @@ static void MupenAudioLenChanged()
     [N64EmulatorBridge.sharedBridge.audioRenderer.audioBuffer writeBuffer:ptr size:LenReg];
 }
 
-static void SetIsNTSC()
+static void SetIsNTSC(void)
 {
     switch (ROM_HEADER.Country_code & 0xFF)
     {
@@ -286,13 +288,13 @@ static void MupenSetAudioSpeed(int percent)
             ConfigExternalOpen(configURL.fileSystemRepresentation, &config);
             
             char *screenWidth[5];
-            ConfigExternalGetParameter(config, "Video-General", "ScreenWidth", screenWidth, 4);
+            ConfigExternalGetParameter(config, "Video-General", "ScreenWidth", (char *)screenWidth, 4);
             
             char *screenHeight[5];
-            ConfigExternalGetParameter(config, "Video-General", "ScreenHeight", screenHeight, 4);
+            ConfigExternalGetParameter(config, "Video-General", "ScreenHeight", (char *)screenHeight, 4);
             
-            int preferredScreenWidth = atoi(screenWidth);
-            int preferredScreenHeight = atoi(screenHeight);
+            int preferredScreenWidth = atoi((const char *)screenWidth);
+            int preferredScreenHeight = atoi((const char *)screenHeight);
             _preferredVideoResolution = CGSizeMake(preferredScreenWidth, preferredScreenHeight);
             
             ConfigExternalClose(config);
@@ -671,7 +673,7 @@ static void MupenSetAudioSpeed(int percent)
         gsCode->value = outValue;
     }
     
-    if (CoreAddCheat([cheatCode UTF8String], codeList, codes.count) != M64ERR_SUCCESS)
+    if (CoreAddCheat([cheatCode UTF8String], codeList, (int)codes.count) != M64ERR_SUCCESS)
     {
         return NO;
     }

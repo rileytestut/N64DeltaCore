@@ -44,7 +44,6 @@
 		BF21773222554FED00D74210 /* biopak.c in Sources */ = {isa = PBXBuildFile; fileRef = BF7995CC224BFF6C009B094F /* biopak.c */; };
 		BF2177332255506100D74210 /* dummy_video_capture.c in Sources */ = {isa = PBXBuildFile; fileRef = BF79950D224BFF6C009B094F /* dummy_video_capture.c */; };
 		BF21773C22556B2300D74210 /* MemoryStatus_mupenplus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF931224C1C070032AD78 /* MemoryStatus_mupenplus.cpp */; };
-		BF21773F22556B7100D74210 /* TxDbg.h in Headers */ = {isa = PBXBuildFile; fileRef = BF21773D22556B6E00D74210 /* TxDbg.h */; };
 		BF21774322556BD100D74210 /* glsl_FXAA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF9E6224C1C080032AD78 /* glsl_FXAA.cpp */; };
 		BF21774422556BE400D74210 /* F5Rogue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF882224C1C070032AD78 /* F5Rogue.cpp */; };
 		BF21774522556BF800D74210 /* F5Indi_Naboo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF2EF887224C1C070032AD78 /* F5Indi_Naboo.cpp */; };
@@ -3468,7 +3467,6 @@
 				BF2EFAA2224C1C090032AD78 /* ftconfig.h in Headers */,
 				BF2EFA8B224C1C080032AD78 /* Turbo3D.h in Headers */,
 				BF2EFBC1224C1C0A0032AD78 /* PixelBuffer.h in Headers */,
-				BF21773F22556B7100D74210 /* TxDbg.h in Headers */,
 				BF2EFBEC224C1C0A0032AD78 /* opengl_BufferedDrawer.h in Headers */,
 				BF2EFA5F224C1C080032AD78 /* PluginAPI.h in Headers */,
 				BF2EFAEE224C1C090032AD78 /* ftlcdfil.h in Headers */,
@@ -3751,10 +3749,12 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Mupen64Plus/GLideN64/src/getRevision.sh",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(SRCROOT)/Mupen64Plus/GLideN64/src/Revision.h",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4049,6 +4049,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4103,6 +4104,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					MUPENPLUSAPI,
