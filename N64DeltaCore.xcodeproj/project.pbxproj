@@ -4058,9 +4058,6 @@
 					TXFILTER_LIB,
 					OS_IOS,
 					GLESX,
-					GL_ERROR_DEBUG,
-					GL_DEBUG,
-					GLESX,
 					"PNG_ARM_NEON_OPT=0",
 				);
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
@@ -4110,9 +4107,6 @@
 					MUPENPLUSAPI,
 					TXFILTER_LIB,
 					OS_IOS,
-					GLESX,
-					GL_ERROR_DEBUG,
-					GL_DEBUG,
 					GLESX,
 					"PNG_ARM_NEON_OPT=0",
 				);
